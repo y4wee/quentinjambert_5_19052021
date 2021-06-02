@@ -1,0 +1,32 @@
+.header {
+    @extend %flex;
+    background-color: $mainColor;
+    height: 200px;
+    align-items: center;
+    justify-content: space-between;
+    &Logo {
+        @extend %flex;
+        height: auto;
+        align-items: center;
+        & h1 {
+            color: $secondColor;
+            margin-left: 20px
+        }
+    }
+    &Pannier {
+        @extend %flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $secondColor;
+        height: 70px;
+        width: 70px;
+        border-radius: 45px;
+        margin-right: 5%;
+    }
+    & .fas {
+        font-size: 1.5em;
+        background: -webkit-gradient(linear, left top, right bottom, from($color3), to($color4));
+	    -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+}

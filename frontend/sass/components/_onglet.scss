@@ -1,0 +1,24 @@
+.onglet {
+    list-style-type: none;
+    @extend %flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    background-color: $secondColor;
+    & li {
+        background-color: $secondColor;
+        width: 195px;
+        text-align: center;
+        & a {
+            color: $mainColor;
+            text-decoration: none;
+        }
+    }
+
+    .ongletActive {
+        background-color: $mainColor;
+        & a {
+            color: $secondColor;
+        }
+    }
+}

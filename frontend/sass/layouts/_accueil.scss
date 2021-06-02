@@ -1,0 +1,21 @@
+main {
+    max-width: 80%;
+    margin: auto;
+}
+.contenu {
+    &Article {
+        display: none;
+    }
+    &Active {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+.contenuArticleCarte {
+    background-size: cover;
+    width: 320px;
+    height: 300px;
+    margin-right: 10%;
+    margin-left: 10%;
+}

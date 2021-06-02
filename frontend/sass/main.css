@@ -1,0 +1,129 @@
+.onglet, .header, .headerLogo, .headerPannier {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@font-face {
+  font-family: 'belligerent';
+  src: url(../police/belligerent.ttf) format("truetype");
+}
+
+.header h1 {
+  font-family: 'belligerent';
+  font-size: 7em;
+  font-weight: lighter;
+}
+
+.onglet {
+  font-family: 'belligerent';
+  font-size: 2.5em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.onglet {
+  list-style-type: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  background-color: #261624;
+}
+
+.onglet li {
+  background-color: #261624;
+  width: 195px;
+  text-align: center;
+}
+
+.onglet li a {
+  color: #F3E9F1;
+  text-decoration: none;
+}
+
+.onglet .ongletActive {
+  background-color: #F3E9F1;
+}
+
+.onglet .ongletActive a {
+  color: #261624;
+}
+
+.header {
+  background-color: #F3E9F1;
+  height: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.headerLogo {
+  height: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerLogo h1 {
+  color: #261624;
+  margin-left: 20px;
+}
+
+.headerPannier {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #261624;
+  height: 70px;
+  width: 70px;
+  border-radius: 45px;
+  margin-right: 5%;
+}
+
+.header .fas {
+  font-size: 1.5em;
+  background: -webkit-gradient(linear, left top, right bottom, from(#E68A08), to(#8F5BFE));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main {
+  max-width: 80%;
+  margin: auto;
+}
+
+.contenuArticle {
+  display: none;
+}
+
+.contenuActive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contenuArticleCarte {
+  background-size: cover;
+  width: 320px;
+  height: 300px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+/*# sourceMappingURL=main.css.map */
