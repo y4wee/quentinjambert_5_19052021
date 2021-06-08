@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPannier, .footer, .footerSocial {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPannier, .footer, .footerSocial, .produitChoisi, .produitChoisiDetail {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,7 +23,7 @@ body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, 
 body {
   margin: 0;
   padding: 0;
-  min-width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: #F3E9F1;
   -webkit-box-orient: vertical;
@@ -249,5 +249,24 @@ main {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   padding: 2% 0;
+}
+
+.produitChoisi {
+  background-color: #261624;
+  height: 500px;
+}
+
+.produitChoisiImage {
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  height: 300px;
+}
+
+.produitChoisiDetail {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=main.css.map */

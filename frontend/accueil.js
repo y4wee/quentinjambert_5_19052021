@@ -37,7 +37,7 @@ function contenuBuilding(categorie) {
     })
     .then(function(produits) {
         for (let produit of produits) {
-            document.querySelector("#ori" + categorie).innerHTML += `<a href= "./produit.html" class= "contenuArticleCarte">
+            document.querySelector("#ori" + categorie).innerHTML += `<a href= "./produit.html" class= "contenuArticleCarte ${categorie}">
                                                                         <div class= "contenuArticleCarteImage" id= "pdt${produit._id}">
                                                                             <div class= "contenuArticleCarteName">
                                                                                 <h2>${produit.name}</h2>
@@ -47,11 +47,13 @@ function contenuBuilding(categorie) {
                                                                     `;
             document.querySelector("#pdt" + produit._id).style.backgroundImage = `url(${produit.imageUrl})`;
         }
-        // recuperation de l'id lors du click sur le lien du produit en question
+        // recuperation des id  et categorie du produit lors du click sur le lien du produit en question, qui sont retournés dans le session storage
         document.querySelectorAll(".contenuArticleCarte").forEach(carte => {
             carte.addEventListener('click', () => {
-                let carteId = carte.querySelector("div").id;
-                localStorage.setItem("pageProduit",JSON.stringify(carteId));
+                let carteId = carte.querySelector("div").id.replace("pdt", "");
+                let carteCategorie = carte.classList.item(1);
+                sessionStorage.setItem("produitChoisi", JSON.stringify(carteId));
+                sessionStorage.setItem("produitCategorie", JSON.stringify(carteCategorie));
             })
         })
     })
