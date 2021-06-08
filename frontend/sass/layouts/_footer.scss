@@ -1,0 +1,36 @@
+.footer {
+    @include flexcenter;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 100%;
+    background-color: $secondColor;
+    margin-top: 100px;
+    // tous les liens du footer
+    a {
+        text-decoration: none;
+        color: $mainColor;
+        font-size: 1.5em;
+        transition: color 0.2s ease-out;
+
+        &:hover {
+            color: $color3;
+        }
+    }
+    // lien vers les reseau sociaux
+    &Social {
+        @include flexcenter;
+        width: 100%;
+        
+        a {
+            font-size: 2.5em;
+            margin: 0 2%;
+        }
+    }
+    // lien faq et contact
+    &Faq {
+        margin: 0 2%;
+    }
+    &Contact {
+        margin: 0 2%;
+    }
+}

@@ -1,24 +1,28 @@
+// onglet general
 .onglet {
     list-style-type: none;
     @extend %flex;
     justify-content: space-between;
     margin: 0;
     padding: 0;
-    background-color: $secondColor;
+    background-color: $mainColor;
+    min-width: 950px;
     & li {
-        background-color: $secondColor;
-        width: 195px;
-        text-align: center;
+        @include flexcenter;
+        height: 55px;
+        width: 30%;
         & a {
-            color: $mainColor;
+            color: $secondColor;
             text-decoration: none;
         }
     }
-
+//onglet actif
     .ongletActive {
-        background-color: $mainColor;
+        background-color: $secondColor;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
         & a {
-            color: $secondColor;
+            color: $mainColor;
         }
     }
 }

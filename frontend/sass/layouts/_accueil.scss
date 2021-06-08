@@ -1,21 +1,19 @@
 main {
-    max-width: 80%;
+    max-width: 65%;
     margin: auto;
 }
+//contenu des liste produit si onglet actif ou non
 .contenu {
     &Article {
         display: none;
     }
     &Active {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
+        background-color: $secondColor;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding: 2% 0;
     }
-}
-.contenuArticleCarte {
-    background-size: cover;
-    width: 320px;
-    height: 300px;
-    margin-right: 10%;
-    margin-left: 10%;
 }

@@ -1,0 +1,45 @@
+// cartes produit
+.contenuArticleCarte {
+    margin: 2% 6%;
+    border-radius: 30px;
+    box-shadow: 0px 3px 7px black;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    &Image {
+        @extend %flex;
+        align-items: flex-end;
+        background-size: cover;
+        background-position: center;
+        width: 300px;
+        height: 300px;
+        border-radius: 30px;
+    }
+    &Name {
+        @extend %flex;
+        justify-content:center;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        background-color: $mainColor;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        position: relative;
+        left: 0;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+        & h2 {
+            margin: 0;
+            color: $secondColor;
+            font-family: sans-serif;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 1px 7px $color3;
+        
+        .contenuArticleCarteName {
+            transform: translateY(0%);
+        }
+    }
+}
