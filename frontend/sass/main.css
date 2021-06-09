@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPannier, .footer, .footerSocial, .produitChoisi, .produitChoisiDetail {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPannier, .footer, .footerSocial, .produitChoisi, .produitChoisiDetail, .addPannier {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,6 +18,10 @@ body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, 
 .onglet {
   font-family: 'belligerent';
   font-size: 2.5em;
+}
+
+body {
+  font-family: sans-serif;
 }
 
 body {
@@ -252,21 +256,84 @@ main {
 }
 
 .produitChoisi {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #261624;
   height: 500px;
+  border-radius: 30px;
+  font-size: 1.2em;
 }
 
 .produitChoisiImage {
   background-position: center;
   background-size: cover;
-  width: 50%;
+  width: 30%;
   height: 300px;
+  width: 300px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 2px 5px black;
+          box-shadow: 0 2px 5px black;
 }
 
 .produitChoisiDetail {
+  height: 100%;
+  width: 50%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: #F3E9F1;
+}
+
+.produitChoisiDetail h1 {
+  font-size: 1.8em;
+}
+
+.produitChoisiDetail label {
+  margin-top: 15px;
+  margin-bottom: 2px;
+}
+
+.produitChoisiDetail select {
+  width: 20%;
+  height: 20px;
+  outline: none;
+  border-radius: 30px;
+}
+
+.produitChoisiDetail input {
+  width: 20%;
+  height: 20px;
+  outline: none;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.produitChoisiDetailPrice {
+  margin: 15px 0;
+  font-size: 1.4em;
+}
+
+.addPannier {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+  width: 180px;
+  margin: 25px auto;
+  background-color: white;
+  color: #261624;
+  font-weight: bold;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 2px 5px black;
+          box-shadow: 0 2px 5px black;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

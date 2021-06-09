@@ -1,8 +1,6 @@
 // recuperation de l'id et de la categorie du produit par le  session storage
 let produitCategorie = JSON.parse(sessionStorage.getItem("produitCategorie"));
 let produitId = JSON.parse(sessionStorage.getItem("produitChoisi"));
-console.log(produitId)
-console.log(produitCategorie)
 
 // requete get sur un seul objet produit par son id
 fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
@@ -28,13 +26,14 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
                                                          <label for="optionsProduit">${optionSort}</label>
                                                          <select name="${optionSort}" id="optionsProduit" required></select>
 
-                                                         <label for="quantite">quantité</label>
-                                                         <input type="number" id="quantite" name="quantite" min="1" value="1">
+                                                         <label for="quantiteProduit">quantité</label>
+                                                         <input type="number" id="quantiteProduit" name="quantite" min="1" value="1">
 
-                                                         <span>${produit.price/100} €</span>
+                                                         <span class="produitChoisiDetailPrice">${produit.price/100} €</span>
                                                          <span class="produitChoisiDetailDescription">
                                                             ${produit.description}
                                                          </span>
+                                                         <div class="addPannier">Ajouter au panier</div>
                                                      </section>
                                                  </article>
                                                 `;
@@ -44,6 +43,5 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
     // implementation des options de modifications en html
     for(let produitOption of produitOptions) {
         document.querySelector("#optionsProduit").innerHTML +=  `<option value= "${produitOption}">${produitOption}</option>`
-        console.log();
     }
 })

@@ -1,17 +1,69 @@
 .produitChoisi {
     @extend %flex;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: $secondColor;
     height: 500px;
+    border-radius: 30px;
+    font-size: 1.2em;
     
     &Image {
         background-position: center;
         background-size: cover;
-        width: 50%;
-        height:300px;
+        width: 30%;
+        height: 300px;
+        width: 300px;
+        border-radius: 30px;
+        box-shadow: 0 2px 5px black;
     }
 
     &Detail {
         @extend %flex;
+        height: 100%;
+        width: 50%;
         flex-direction: column;
+        color: $mainColor;
+    
+        & h1 {
+            font-size: 1.8em;
+        }
+
+        & label {
+            margin-top: 15px;
+            margin-bottom: 2px;
+        }
+
+        & select {
+            width: 20%;
+            height: 20px;
+            outline: none;
+            border-radius: 30px;
+        }
+    
+        & input {
+            width: 20%;
+            height: 20px;
+            outline: none;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        &Price {
+            margin: 15px 0;
+            font-size: 1.4em;
+        }
     }
+}
+
+.addPannier {
+    @include flexcenter;
+    height: 45px;
+    width: 180px;
+    margin: 25px auto;
+    background-color: white;
+    color: $secondColor;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px black;
+    cursor: pointer;
 }
