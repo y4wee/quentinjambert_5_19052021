@@ -1,7 +1,6 @@
 // recuperation de l'id et de la categorie du produit par le  session storage
 let produitCategorie = JSON.parse(sessionStorage.getItem("produitCategorie"));
 let produitId = JSON.parse(sessionStorage.getItem("produitChoisi"));
-
 // requete get sur un seul objet produit par son id
 fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
 .then(function(data) {
@@ -11,7 +10,7 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
 })
 .then(function(produit) {
     // changement du title de la page en fonction du produit
-    document.title = "- " + produit.name + " -";
+    document.title = "- Ori" + produitCategorie + " - " + produit.name + " -";
 
     // recuperation des informations de modification de produit
     let optionSort = Object.keys(produit)[0];
@@ -34,14 +33,29 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
                                                             ${produit.description}
                                                          </span>
                                                          <div class="addPannier">Ajouter au panier</div>
-                                                     </section>
-                                                 </article>
+                                                      </section>
+                                                </article>
                                                 `;
     // mise en place des images 
     document.querySelector(".produitChoisiImage").style.backgroundImage = `url(${produit.imageUrl})`;
     
     // implementation des options de modifications en html
     for(let produitOption of produitOptions) {
-        document.querySelector("#optionsProduit").innerHTML +=  `<option value= "${produitOption}">${produitOption}</option>`
+        document.querySelector("#optionsProduit").innerHTML +=  `<option value= "${produitOption}">${produitOption}</option>`;
     }
+
+    // event pour ajouter des produits au pannier
+    document.querySelector(".addPannier").addEventListener("click", function(e){
+        e.preventDefault;
+        let quantiteProduit = document.querySelector("#quantiteProduit").value;
+        // ajoute l'objet produit x la quantité dans un array pour locale storage
+        for(i = 0; i < quantiteProduit; i++) {
+            contenuPannier.push(produit);
+        }
+        localStorage.setItem("contenuPannier", JSON.stringify(contenuPannier));
+        //modification de l'affichage du nombre de produit dans le pannier
+        document.querySelector(".headerPannierNumber").innerHTML = `${contenuPannier.length}`
+        
+        return alert(`${produit.name} a été ajouté au pannier`);
+    })
 })

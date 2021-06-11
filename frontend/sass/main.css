@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPannier, .footer, .footerSocial, .produitChoisi, .produitChoisiDetail, .addPannier {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPannier, .headerPannierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiDetail, .addPannier {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,10 +172,29 @@ body {
   width: 70px;
   border-radius: 45px;
   margin-right: 5%;
+  position: relative;
+}
+
+.headerPannierNumber {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: -10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #E68A08;
+  color: #261624;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .header .fas {
-  font-size: 1.5em;
+  font-size: 1.8em;
   background: -webkit-gradient(linear, left top, right bottom, from(#E68A08), to(#8F5BFE));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
