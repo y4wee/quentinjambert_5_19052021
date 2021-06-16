@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPannier, .headerPannierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiDetail, .addPannier {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,6 +24,13 @@ body {
   font-family: sans-serif;
 }
 
+.detailNom {
+  font-family: 'belligerent';
+  font-weight: normal;
+  -webkit-transform: rotateZ(-10deg);
+          transform: rotateZ(-10deg);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -37,6 +44,10 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.displayOff {
+  display: none;
 }
 
 .contenuArticleCarte {
@@ -160,7 +171,7 @@ body {
   margin-left: 20px;
 }
 
-.headerPannier {
+.headerPanier {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -175,7 +186,7 @@ body {
   position: relative;
 }
 
-.headerPannierNumber {
+.headerPanierNumber {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -209,7 +220,7 @@ body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 300px;
+  height: 250px;
   width: 100%;
   background-color: #261624;
   margin-top: 100px;
@@ -274,6 +285,107 @@ main {
   padding: 2% 0;
 }
 
+.pageCommande {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.pageCommandePanier {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #261624;
+  border-radius: 30px;
+}
+
+.pageCommandePanierProduit {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  width: 75%;
+  min-width: 500px;
+  margin: 15px auto;
+  background-color: #F3E9F1;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.pageCommandePanierProduitImage {
+  background-position: center;
+  background-size: cover;
+  height: 110px;
+  width: 110px;
+}
+
+.pageCommandePanierProduitDetail {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  width: 50%;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.pageCommandePanierProduitRemove {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 120px;
+  background-color: #E68A08;
+  color: #F3E9F1;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.pageCommandeTotal {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px auto;
+  padding-top: 15px;
+  width: 100%;
+  border-top: solid 3px black;
+  font-size: 1.3em;
+}
+
+.pageCommandeVide {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pageCommandeVide p {
+  font-size: 2em;
+  font-family: 'belligerent';
+  margin-bottom: 70px;
+}
+
+.pageCommandeVide .far {
+  font-size: 7em;
+  color: #261624;
+}
+
 .produitChoisi {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -281,10 +393,32 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   background-color: #261624;
   height: 500px;
   border-radius: 30px;
   font-size: 1.2em;
+}
+
+.produitChoisiBack {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: -150px;
+  background-color: #261624;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.produitChoisiBack .fas {
+  color: #F3E9F1;
+  font-size: 1.7em;
 }
 
 .produitChoisiImage {
@@ -337,7 +471,7 @@ main {
   font-size: 1.4em;
 }
 
-.addPannier {
+.addPanier {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -347,12 +481,23 @@ main {
   height: 45px;
   width: 180px;
   margin: 25px auto;
-  background-color: white;
+  background-color: #b56c06;
   color: #261624;
   font-weight: bold;
   border-radius: 30px;
   -webkit-box-shadow: 0 2px 5px black;
           box-shadow: 0 2px 5px black;
   cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.addPanier:hover {
+  background-color: #E68A08;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  -webkit-box-shadow: 0 3px 10px black;
+          box-shadow: 0 3px 10px black;
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */

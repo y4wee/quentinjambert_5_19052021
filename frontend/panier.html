@@ -15,7 +15,7 @@
             crossorigin="anonymous"
         ></script>
 
-        <title>-</title>
+        <title>- Votre Panier -</title>
     </head>
 
     <body>
@@ -27,13 +27,24 @@
                 </a>
                 <h1>Orinoco</h1>
             </div>
-            <a href="#" class="headerPannier">
+            <a href="#" class="headerPanier">
                 <i class="fas fa-shopping-bag"></i>
-                <div class="headerPannierNumber"></div>
+                <div class="headerPanierNumber">0</div>
             </a>
         </header>
 
-        <main class="mainPannier"></main>
+        <main class="pageCommande">
+            <div class="pageCommandeVide displayOff">
+                <p>Oups... votre panier est vide !</p>
+                <i class="far fa-grin-beam-sweat"></i>
+            </div>
+            <div class="pageCommandePanier"></div>
+            <div class="pageCommandeTotal">
+                <span>Total de la commande :</span>
+                <span class="pageCommandeTotalPrix"></span>
+            </div>
+            <form class="pageCommandeForm"></form>
+        </main>
 
         <footer class="footer">
             <div class="footerSocial">
@@ -45,7 +56,8 @@
             <a href="#" class="footerContact">Nous contacter</a>
         </footer>
         
-        <script src="./pannier.js"></script>
+        <script src="./function.js"></script>
+        <script src="./panier.js"></script>
 
     </body>
 </html>

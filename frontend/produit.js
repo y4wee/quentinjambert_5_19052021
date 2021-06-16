@@ -18,6 +18,7 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
     
     // implementation html page produit
     document.querySelector("main").innerHTML =  `<article class="produitChoisi">
+                                                     <a class="produitChoisiBack" href="#pdt${produit._id}"><i class="fas fa-arrow-left"></i></a>
                                                      <section class="produitChoisiImage"></section>
                                                      <section class="produitChoisiDetail">
                                                          <h1>${produit.name}</h1>
@@ -32,7 +33,7 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
                                                          <span class="produitChoisiDetailDescription">
                                                             ${produit.description}
                                                          </span>
-                                                         <div class="addPannier">Ajouter au panier</div>
+                                                         <div class="addPanier">Ajouter au panier</div>
                                                       </section>
                                                 </article>
                                                 `;
@@ -44,18 +45,17 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
         document.querySelector("#optionsProduit").innerHTML +=  `<option value= "${produitOption}">${produitOption}</option>`;
     }
 
-    // event pour ajouter des produits au pannier
-    document.querySelector(".addPannier").addEventListener("click", function(e){
+    // event pour ajouter des produits au panier
+    document.querySelector(".addPanier").addEventListener("click", function(e){
         e.preventDefault;
         let quantiteProduit = document.querySelector("#quantiteProduit").value;
         // ajoute l'objet produit x la quantité dans un array pour locale storage
         for(i = 0; i < quantiteProduit; i++) {
-            contenuPannier.push(produit);
+            contenuPanier.push(produit);
         }
-        localStorage.setItem("contenuPannier", JSON.stringify(contenuPannier));
-        //modification de l'affichage du nombre de produit dans le pannier
-        document.querySelector(".headerPannierNumber").innerHTML = `${contenuPannier.length}`
+        saveStorage();
+        changePanierNb();
         
-        return alert(`${produit.name} a été ajouté au pannier`);
+        return alert(`${produit.name} a été ajouté au panier`);
     })
 })

@@ -1,12 +1,29 @@
+// page produit
 .produitChoisi {
     @extend %flex;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
     background-color: $secondColor;
     height: 500px;
     border-radius: 30px;
     font-size: 1.2em;
-    
+    // back arrow
+    &Back {
+        @include flexcenter;
+        position: absolute;
+        left: -150px;
+        background-color: $secondColor;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        text-decoration: none;
+        & .fas {
+            color: $mainColor;
+            font-size: 1.7em;
+        }
+    }
+    //image produit
     &Image {
         background-position: center;
         background-size: cover;
@@ -16,30 +33,29 @@
         border-radius: 30px;
         box-shadow: 0 2px 5px black;
     }
-
+    // detail du produit
     &Detail {
         @extend %flex;
         height: 100%;
         width: 50%;
         flex-direction: column;
         color: $mainColor;
-    
+        // nom du produit
         & h1 {
             font-size: 1.8em;
         }
-
         & label {
             margin-top: 15px;
             margin-bottom: 2px;
         }
-
+        // selection modification pdt
         & select {
             width: 20%;
             height: 20px;
             outline: none;
             border-radius: 30px;
         }
-    
+        // champ quantite pdt
         & input {
             width: 20%;
             height: 20px;
@@ -47,23 +63,31 @@
             border-radius: 30px;
             text-align: center;
         }
-
+        // prix du pdt
         &Price {
             margin: 15px 0;
             font-size: 1.4em;
         }
     }
 }
-
-.addPannier {
+//bouton ajout au pannier
+.addPanier {
     @include flexcenter;
     height: 45px;
     width: 180px;
     margin: 25px auto;
-    background-color: white;
+    background-color: darken($color: $color3, $amount: 10%);
     color: $secondColor;
     font-weight: bold;
     border-radius: 30px;
     box-shadow: 0 2px 5px black;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: $color3;
+        transform: scale(1.15);
+        box-shadow: 0 3px 10px black;
+        color: black;
+    }
 }
