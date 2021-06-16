@@ -34,20 +34,16 @@ for (let produitPanier of contenuPanier) {
         document.querySelector(`.detailPrix.pdt${produitPanier._id}`).textContent = produitPanier.price/100 * detailQuantite.textContent + " €";
     }
 }
-// bouton pour enlever un pdt du panier
+// bouton pour enlever un pdt du panier grace au bouton remove
 document.querySelectorAll(".pageCommandePanierProduitRemove").forEach(removingButton => {
     removingButton.addEventListener("click", (e) => {
         e.preventDefault;
-        let confirmRemove = confirm("voulez vous vraiment enlever cet article de votre panier ?");
-        if (confirmRemove) {
-            let removeId = removingButton.parentNode.id.replace("panier", "");
-            contenuPanier = contenuPanier.filter( contenu => contenu._id != removeId);
-            saveStorage();
-            panierState();
-            removingButton.parentNode.remove();
-        }
-    })
+        removePdtPanier(removingButton);
+        prixPanier()
+    });
 })
+// total du prix du panier
+prixPanier();
 
 /*document.querySelectorAll(".quantiteRemove").forEach(removing => {
     console.log(removing.nextElementSibling);

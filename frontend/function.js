@@ -23,3 +23,25 @@ function panierState() {
         panierVide();
     }
 }
+
+// suppression d'un produit du panier et du local storage
+function removePdtPanier(button) {
+    let confirmRemove = confirm("voulez vous vraiment enlever cet article de votre panier ?");
+        if (confirmRemove) {
+            let removeId = button.parentNode.id.replace("panier", "");
+            contenuPanier = contenuPanier.filter( contenu => contenu._id != removeId);
+            saveStorage();
+            panierState();
+            button.parentNode.remove();
+        }
+}
+
+// prix totale du panier
+function prixPanier() {
+    let totalPrixPanier = 0;
+    document.querySelectorAll(".detailPrix").forEach(prix => {
+        let prixNb = prix.textContent.replace(" €", "");
+        totalPrixPanier += parseInt(prixNb, 10);
+    })
+    document.querySelector(".pageCommandeTotalPrix").textContent = totalPrixPanier + " €";
+}

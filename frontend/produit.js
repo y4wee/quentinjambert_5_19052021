@@ -18,7 +18,7 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
     
     // implementation html page produit
     document.querySelector("main").innerHTML =  `<article class="produitChoisi">
-                                                     <a class="produitChoisiBack" href="#pdt${produit._id}"><i class="fas fa-arrow-left"></i></a>
+                                                     <a class="produitChoisiBack" href="./accueil.html"><i class="fas fa-arrow-left"></i></a>
                                                      <section class="produitChoisiImage"></section>
                                                      <section class="produitChoisiDetail">
                                                          <h1>${produit.name}</h1>
@@ -48,6 +48,8 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
     // event pour ajouter des produits au panier
     document.querySelector(".addPanier").addEventListener("click", function(e){
         e.preventDefault;
+        let valueE = e.target;
+        console.log(valueE);
         let quantiteProduit = document.querySelector("#quantiteProduit").value;
         // ajoute l'objet produit x la quantité dans un array pour locale storage
         for(i = 0; i < quantiteProduit; i++) {

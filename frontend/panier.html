@@ -34,16 +34,41 @@
         </header>
 
         <main class="pageCommande">
+
             <div class="pageCommandeVide displayOff">
                 <p>Oups... votre panier est vide !</p>
                 <i class="far fa-grin-beam-sweat"></i>
             </div>
+
             <div class="pageCommandePanier"></div>
             <div class="pageCommandeTotal">
                 <span>Total de la commande :</span>
                 <span class="pageCommandeTotalPrix"></span>
             </div>
-            <form class="pageCommandeForm"></form>
+
+            <form class="commandeForm" action="" method="POST">
+                <div class="commandeFormNom">
+                    <label for="formNom">Nom :</label>
+                    <input type="text" name="formNom" id="formNom" required>
+                </div>
+                <div class="commandeFormPrenom">
+                    <label for="formPrenom">Prénom :</label>
+                    <input type="text" name="formPrenom" id="formPrenom" required>
+                </div>
+                <div class="commandeFormAdresse">
+                    <label for="formAdresse">Adresse :</label>
+                    <input type="text" name="formAdresse" id="formAdresse" required>
+                </div>
+                <div class="commandeFormVille">
+                    <label for="formVille">Ville :</label>
+                    <input type="text" name="formVille" id="formVille" required>
+                </div>
+                <div class="commandeFormEmail">
+                    <label for="formEmail">Em@il :</label>
+                    <input type="email" name="formEmail" id="formEmail" required>
+                </div>
+                <input type="submit" value="commander">
+            </form>
         </main>
 
         <footer class="footer">

@@ -312,7 +312,7 @@ main {
   height: 100px;
   width: 75%;
   min-width: 500px;
-  margin: 15px auto;
+  margin: 10px auto;
   background-color: #F3E9F1;
   border-radius: 30px;
   overflow: hidden;
@@ -365,14 +365,16 @@ main {
 }
 
 .pageCommandeTotal {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin: 30px auto;
-  padding-top: 15px;
+  padding: 15px 50px;
   width: 100%;
   border-top: solid 3px black;
   font-size: 1.3em;
+}
+
+.pageCommandeTotalPrix {
+  font-weight: bold;
+  margin-left: 50px;
 }
 
 .pageCommandeVide {
