@@ -34,21 +34,51 @@ for (let produitPanier of contenuPanier) {
         document.querySelector(`.detailPrix.pdt${produitPanier._id}`).textContent = produitPanier.price/100 * detailQuantite.textContent + " €";
     }
 }
+// total du prix du panier
+prixPanier();
+
+// boutons pour gerer les quantités
+//enlever une quantité
+document.querySelectorAll(".quantiteRemove").forEach(removing => {
+    removing.addEventListener("click", (e) => {
+        e.preventDefault;
+        if (removing.nextElementSibling.textContent > 1) {
+            e.preventDefault;
+            let pdtQuantite = removing.nextElementSibling;
+            let pdtId = removing.parentNode.parentNode.id.replace("panier", "");
+            let produitRemove = contenuPanier.find(element => element._id == pdtId);
+            let pdtIndex = contenuPanier.indexOf(produitRemove);
+
+            pdtQuantite.textContent--;
+            contenuPanier.splice(pdtIndex, 1);
+            changePanierNb();
+            saveStorage();
+            document.querySelector(`.detailPrix.pdt${pdtId}`).textContent = produitRemove.price/100 * pdtQuantite.textContent + " €";
+            prixPanier();
+        }
+    })
+})
+//ajouter une quantité
+document.querySelectorAll(".quantiteAdd").forEach(adding => {
+    adding.addEventListener("click", (e) => {
+        e.preventDefault;
+        let pdtQuantite = adding.previousElementSibling;
+        let pdtId = adding.parentNode.parentNode.id.replace("panier", "");
+        let produitAdd = contenuPanier.find(element => element._id == pdtId)
+
+        pdtQuantite.textContent++;
+        contenuPanier.splice(1, 0, produitAdd);
+        changePanierNb();
+        saveStorage();
+        document.querySelector(`.detailPrix.pdt${pdtId}`).textContent = produitAdd.price/100 * pdtQuantite.textContent + " €";
+        prixPanier();
+    })
+})
 // bouton pour enlever un pdt du panier grace au bouton remove
 document.querySelectorAll(".pageCommandePanierProduitRemove").forEach(removingButton => {
     removingButton.addEventListener("click", (e) => {
         e.preventDefault;
         removePdtPanier(removingButton);
-        prixPanier()
+        prixPanier();
     });
 })
-// total du prix du panier
-prixPanier();
-
-/*document.querySelectorAll(".quantiteRemove").forEach(removing => {
-    console.log(removing.nextElementSibling);
-    removing.addEventListener("click", (e) => {
-        e.preventDefault;
-        removing.nextElementSibling.textContent--;
-    })
-})*/

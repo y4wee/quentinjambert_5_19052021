@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,6 +328,7 @@ main {
   height: 100px;
   width: calc(100% - 100px);
   opacity: 0.3;
+  z-index: 0;
 }
 
 .pageCommandePanierProduitDetail {
@@ -338,6 +339,11 @@ main {
   width: calc(100% - 100px);
   font-size: 1.3em;
   font-weight: bold;
+  z-index: 1;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .pageCommandePanierProduitDetail .detailNom {
@@ -346,6 +352,36 @@ main {
 
 .pageCommandePanierProduitDetail .detailPrix {
   margin-right: 25px;
+}
+
+.pageCommandePanierProduitDetail .quantiteAdd {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #E68A08;
+  color: white;
+  cursor: pointer;
+}
+
+.pageCommandePanierProduitDetail .quantiteRemove {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #E68A08;
+  color: white;
+  cursor: pointer;
 }
 
 .pageCommandePanierProduitRemove {

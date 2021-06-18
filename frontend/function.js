@@ -12,14 +12,13 @@ function changePanierNb() {
 // changement de la page panier si vide
 function panierVide() {
     document.querySelector(".pageCommandeTotal").classList.add("displayOff");
-    document.querySelector(".pageCommandeForm").classList.add("displayOff");
+    document.querySelector(".commandeForm").classList.add("displayOff");
     document.querySelector(".pageCommandeVide").classList.remove("displayOff");
 }
 // jonction entre les deux fonctions
 function panierState() {
-    if (contenuPanier.length > 0) {
-        changePanierNb();
-    } else {
+    changePanierNb();
+    if (contenuPanier.length == 0) {
         panierVide();
     }
 }
