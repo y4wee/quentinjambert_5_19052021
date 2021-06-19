@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -285,6 +285,121 @@ main {
   padding: 2% 0;
 }
 
+.produitChoisi {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: #261624;
+  height: 500px;
+  border-radius: 30px;
+  font-size: 1.2em;
+}
+
+.produitChoisiBack {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: -150px;
+  background-color: #261624;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.produitChoisiBack .fas {
+  color: #F3E9F1;
+  font-size: 1.7em;
+}
+
+.produitChoisiImage {
+  background-position: center;
+  background-size: cover;
+  width: 30%;
+  height: 300px;
+  width: 300px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 2px 5px black;
+          box-shadow: 0 2px 5px black;
+}
+
+.produitChoisiDetail {
+  height: 100%;
+  width: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #F3E9F1;
+}
+
+.produitChoisiDetail h1 {
+  font-size: 1.8em;
+}
+
+.produitChoisiDetail label {
+  margin-top: 15px;
+  margin-bottom: 2px;
+}
+
+.produitChoisiDetail select {
+  width: 20%;
+  height: 20px;
+  outline: none;
+  border-radius: 30px;
+}
+
+.produitChoisiDetail input {
+  width: 20%;
+  height: 20px;
+  outline: none;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.produitChoisiDetailPrice {
+  margin: 15px 0;
+  font-size: 1.4em;
+}
+
+.addPanier {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45px;
+  width: 180px;
+  margin: 25px auto;
+  background-color: #b56c06;
+  color: #261624;
+  font-weight: bold;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 2px 5px black;
+          box-shadow: 0 2px 5px black;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.addPanier:hover {
+  background-color: #E68A08;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  -webkit-box-shadow: 0 3px 10px black;
+          box-shadow: 0 3px 10px black;
+  color: black;
+}
+
 .pageCommande {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -400,6 +515,11 @@ main {
   font-size: 2em;
 }
 
+.pageCommandePanierProduitRemove:hover {
+  background-color: #f79711;
+  color: white;
+}
+
 .pageCommandeTotal {
   margin: 30px auto;
   padding: 15px 50px;
@@ -411,6 +531,30 @@ main {
 .pageCommandeTotalPrix {
   font-weight: bold;
   margin-left: 50px;
+}
+
+.pageCommandeValidation {
+  width: 220px;
+  height: 50px;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.3em;
+  color: #261624;
+  background-color: #E68A08;
+  -webkit-box-shadow: 0 1px 5px #261624;
+          box-shadow: 0 1px 5px #261624;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.pageCommandeValidation:hover {
+  background-color: #f79711;
+  color: black;
+  -webkit-box-shadow: 0 2px 8px black;
+          box-shadow: 0 2px 8px black;
 }
 
 .pageCommandeVide {
@@ -434,21 +578,23 @@ main {
   color: #261624;
 }
 
-.produitChoisi {
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+.formOverlay {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  background-color: #261624;
-  height: 500px;
-  border-radius: 30px;
-  font-size: 1.2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.produitChoisiBack {
+.formOverlayClose {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -456,96 +602,80 @@ main {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  left: -150px;
-  background-color: #261624;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  text-decoration: none;
-}
-
-.produitChoisiBack .fas {
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #E68A08;
   color: #F3E9F1;
-  font-size: 1.7em;
+  font-size: 2em;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  cursor: pointer;
 }
 
-.produitChoisiImage {
-  background-position: center;
-  background-size: cover;
-  width: 30%;
-  height: 300px;
-  width: 300px;
-  border-radius: 30px;
-  -webkit-box-shadow: 0 2px 5px black;
-          box-shadow: 0 2px 5px black;
-}
-
-.produitChoisiDetail {
-  height: 100%;
-  width: 50%;
+.commandeForm {
+  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: #F3E9F1;
-}
-
-.produitChoisiDetail h1 {
-  font-size: 1.8em;
-}
-
-.produitChoisiDetail label {
-  margin-top: 15px;
-  margin-bottom: 2px;
-}
-
-.produitChoisiDetail select {
-  width: 20%;
-  height: 20px;
-  outline: none;
-  border-radius: 30px;
-}
-
-.produitChoisiDetail input {
-  width: 20%;
-  height: 20px;
-  outline: none;
-  border-radius: 30px;
-  text-align: center;
-}
-
-.produitChoisiDetailPrice {
-  margin: 15px 0;
-  font-size: 1.4em;
-}
-
-.addPanier {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 45px;
-  width: 180px;
-  margin: 25px auto;
-  background-color: #b56c06;
-  color: #261624;
-  font-weight: bold;
+  width: 70%;
+  max-width: 700px;
+  padding: 20px 0;
+  background-color: #F3E9F1;
+  border: solid 1px #261624;
   border-radius: 30px;
-  -webkit-box-shadow: 0 2px 5px black;
-          box-shadow: 0 2px 5px black;
+  font-size: 1.3em;
+  -webkit-box-shadow: 0 0 100px #F3E9F1;
+          box-shadow: 0 0 100px #F3E9F1;
+  overflow: hidden;
+}
+
+.commandeForm div input {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 0.9em;
+  margin-left: 20px;
+}
+
+.commandeForm div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: calc(100% - 100px);
+  height: 40px;
+  border-bottom: solid 2px #261624;
+  margin-top: 50px;
+}
+
+.commandeForm input[type=submit] {
+  margin: 50px auto;
+  width: 200px;
+  height: 50px;
+  background-color: #E68A08;
+  color: #261624;
+  border: none;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 1px 5px #261624;
+          box-shadow: 0 1px 5px #261624;
+  font-size: 1.1em;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.addPanier:hover {
-  background-color: #E68A08;
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
-  -webkit-box-shadow: 0 3px 10px black;
-          box-shadow: 0 3px 10px black;
+.commandeForm input[type=submit]:hover {
+  background-color: #f79711;
   color: black;
+  -webkit-box-shadow: 0 2px 8px black;
+          box-shadow: 0 2px 8px black;
 }
 /*# sourceMappingURL=main.css.map */

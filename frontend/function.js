@@ -12,7 +12,7 @@ function changePanierNb() {
 // changement de la page panier si vide
 function panierVide() {
     document.querySelector(".pageCommandeTotal").classList.add("displayOff");
-    document.querySelector(".commandeForm").classList.add("displayOff");
+    document.querySelector(".pageCommandeValidation").classList.add("displayOff");
     document.querySelector(".pageCommandeVide").classList.remove("displayOff");
 }
 // jonction entre les deux fonctions

@@ -1,0 +1,79 @@
+// overlay form arriere plan
+.formOverlay {
+    @include flexcenter;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.8);
+    //bouton pour fermer l'overlay form
+    &Close {
+        @include flexcenter;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background-color: $color3;
+        color: $mainColor;
+        font-size: 2em;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        
+        cursor: pointer;
+    }
+}
+// mise en page formulaire
+.commandeForm {
+    position: relative;
+    @extend %flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    max-width: 700px;
+    padding: 20px 0;
+    background-color: $mainColor;
+    border: solid 1px $secondColor;
+    border-radius: 30px;
+    font-size: 1.3em;
+    box-shadow: 0 0 100px $mainColor;
+    overflow: hidden;
+    // input du form
+    & div input {
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: 0.9em;
+        margin-left: 20px;
+    }
+    // affichage de chaque champs text du form
+    & div {
+        display: flex;
+        align-items: flex-end;
+        width: calc(100% - 100px);
+        height: 40px;
+        border-bottom: solid 2px $secondColor;
+        margin-top: 50px;
+    }
+    // bouton commander du form
+    & input[type=submit] {
+        margin: 50px auto;
+        width: 200px;
+        height: 50px;
+        background-color: $color3;
+        color: $secondColor;
+        border: none;
+        border-radius: 30px;
+        box-shadow: 0 1px 5px $secondColor;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            background-color: lighten($color3, 5%);
+            color: black;
+            box-shadow: 0 2px 8px black;
+        }
+    }
+}

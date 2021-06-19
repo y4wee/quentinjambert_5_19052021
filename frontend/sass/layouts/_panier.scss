@@ -80,6 +80,10 @@
                 cursor: pointer;
                 font-weight: bold;
                 font-size: 2em;
+                &:hover {
+                    background-color: lighten($color3, 5%);
+                    color: white;
+                }
             }
         }
     }
@@ -96,6 +100,27 @@
     &Prix {
         font-weight: bold;
         margin-left: 50px;
+    }
+}
+
+//validation du pannier
+.pageCommandeValidation {
+    width: 220px;
+    height: 50px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.3em;
+    color: $secondColor;
+    background-color: $color3;
+    box-shadow: 0 1px 5px $secondColor;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: lighten($color3, 5%);
+        color: black;
+        box-shadow: 0 2px 8px black;
     }
 }
 

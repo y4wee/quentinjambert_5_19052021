@@ -45,30 +45,36 @@
                 <span>Total de la commande :</span>
                 <span class="pageCommandeTotalPrix"></span>
             </div>
+            <button class="pageCommandeValidation" type="button">Validez votre panier</button>
 
-            <form class="commandeForm" action="" method="POST">
-                <div class="commandeFormNom">
-                    <label for="formNom">Nom :</label>
-                    <input type="text" name="formNom" id="formNom" required>
-                </div>
-                <div class="commandeFormPrenom">
-                    <label for="formPrenom">Prénom :</label>
-                    <input type="text" name="formPrenom" id="formPrenom" required>
-                </div>
-                <div class="commandeFormAdresse">
-                    <label for="formAdresse">Adresse :</label>
-                    <input type="text" name="formAdresse" id="formAdresse" required>
-                </div>
-                <div class="commandeFormVille">
-                    <label for="formVille">Ville :</label>
-                    <input type="text" name="formVille" id="formVille" required>
-                </div>
-                <div class="commandeFormEmail">
-                    <label for="formEmail">Em@il :</label>
-                    <input type="email" name="formEmail" id="formEmail" required>
-                </div>
-                <input type="submit" value="commander">
-            </form>
+            <div class="formOverlay displayOff">
+
+                <form class="commandeForm" action="" method="POST">
+                    <span class="formOverlayClose">X</span>
+
+                    <div class="commandeFormNom">
+                        <label for="formNom">Nom :</label>
+                        <input type="text" name="formNom" id="formNom" required>
+                    </div>
+                    <div class="commandeFormPrenom">
+                        <label for="formPrenom">Prénom :</label>
+                        <input type="text" name="formPrenom" id="formPrenom" required>
+                    </div>
+                    <div class="commandeFormAdresse">
+                        <label for="formAdresse">Adresse :</label>
+                        <input type="text" name="formAdresse" id="formAdresse" required>
+                    </div>
+                    <div class="commandeFormVille">
+                        <label for="formVille">Ville :</label>
+                        <input type="text" name="formVille" id="formVille" required>
+                    </div>
+                    <div class="commandeFormEmail">
+                        <label for="formEmail">Em@il :</label>
+                        <input type="email" name="formEmail" id="formEmail" required>
+                    </div>
+                    <input type="submit" value="Commander">
+                </form>
+            </div>
         </main>
 
         <footer class="footer">
@@ -83,6 +89,7 @@
         
         <script src="./function.js"></script>
         <script src="./panier.js"></script>
+        <script src="./form.js"></script>
 
     </body>
 </html>
