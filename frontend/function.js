@@ -44,3 +44,8 @@ function prixPanier() {
     })
     document.querySelector(".pageCommandeTotalPrix").textContent = totalPrixPanier + " €";
 }
+
+// validation input text 
+function isValid() {
+    
+}

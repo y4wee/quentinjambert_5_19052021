@@ -607,11 +607,20 @@ main {
   width: 50px;
   height: 50px;
   background-color: #E68A08;
-  color: #F3E9F1;
-  font-size: 2em;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%;
+  color: #261624;
+  font-size: 1.2em;
+  border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.formOverlayClose:hover {
+  background-color: #f79711;
+  color: black;
+  font-size: 1.4em;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .commandeForm {
@@ -626,8 +635,7 @@ main {
   width: 70%;
   max-width: 700px;
   padding: 20px 0;
-  background-color: #F3E9F1;
-  border: solid 1px #261624;
+  background-color: #f7f0f5;
   border-radius: 30px;
   font-size: 1.3em;
   -webkit-box-shadow: 0 0 100px #F3E9F1;
@@ -641,6 +649,7 @@ main {
   background: transparent;
   font-size: 0.9em;
   margin-left: 20px;
+  min-width: 340px;
 }
 
 .commandeForm div {

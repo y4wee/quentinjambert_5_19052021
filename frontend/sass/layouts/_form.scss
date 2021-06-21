@@ -17,12 +17,18 @@
         width: 50px;
         height: 50px;
         background-color: $color3;
-        color: $mainColor;
-        font-size: 2em;
-        border-top-right-radius: 50%;
-        border-bottom-left-radius: 50%;
-        
+        color: $secondColor;
+        font-size: 1.2em;
+        border-radius: 50%;
         cursor: pointer;
+        transition: all 0.2s ease-out;
+        &:hover {
+            background-color: lighten($color3, 5%);
+            color: black;
+            font-size: 1.4em;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
     }
 }
 // mise en page formulaire
@@ -34,8 +40,7 @@
     width: 70%;
     max-width: 700px;
     padding: 20px 0;
-    background-color: $mainColor;
-    border: solid 1px $secondColor;
+    background-color: lighten($mainColor, 2%);
     border-radius: 30px;
     font-size: 1.3em;
     box-shadow: 0 0 100px $mainColor;
@@ -47,6 +52,7 @@
         background: transparent;
         font-size: 0.9em;
         margin-left: 20px;
+        min-width: 340px;
     }
     // affichage de chaque champs text du form
     & div {
