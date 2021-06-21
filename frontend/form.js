@@ -29,24 +29,20 @@ document.querySelectorAll(".commandeForm div input").forEach(input => {
     })
 })
 
-function postFormData(e) {
-    e.preventDefault;
-    fetch("http://localhost:3000/api/teddies/POST", {
+
+function postFormData() {
+    try {
+        fetch("http://localhost:3000/api/teddies/order", {
         method: "POST",
         headers: {
-        'Accept': 'application/json', 
         'Content-Type': 'application/json'
         },
-        body: JSON.stringify(contact, products)
+        body: JSON.stringify({contact, products})
     })
-    .then(function(res) {
-        if (res.ok) {
-        return res.json();
-        }
-    })
-    .then(function(value) {
-        console.log(value)
-    })
+    } catch(e) {
+        console.log(e)
+    }
+    
 }
 
-document.querySelector(".commandeForm").addEventListener("submit", postFormData);
+document.querySelector(".commandeForm").addEventListener("submit", postFormData());
