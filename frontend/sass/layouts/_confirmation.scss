@@ -1,0 +1,53 @@
+.headerConfirmation {
+    @include flexcenter;
+    & h1 {
+        font-family: 'belligerent';
+        font-size: 7em;
+        font-weight: lighter;
+        margin-right: 10%;
+        color: $secondColor;
+    }
+}
+// header confirmation pour retourner a la page accueil
+.footerConfirmation {
+    @extend %flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    & a {
+        font-size: 6em;
+        color: $secondColor;
+        text-decoration: none;
+        width: fit-content;
+    }
+}
+//message au chargement de la page 
+.confirmationMessage {
+    @include flexcenter;
+    flex-direction: column;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.9);
+    color: $mainColor;
+    text-shadow: 0 0 20px $color3;
+    & span {
+        font-family: 'belligerent';
+        font-size: 6em;
+        font-weight: lighter;
+        margin-bottom: 50px
+    }
+    & .far {
+        font-size: 7em;
+        transform-origin: 0;
+        transform: rotateZ(-30deg);
+        margin-top: 50px;
+    }
+}
+
+.mainConfirmation {
+    @include flexcenter;
+}

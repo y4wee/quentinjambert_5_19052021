@@ -48,9 +48,13 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
     // event pour ajouter des produits au panier
     document.querySelector(".addPanier").addEventListener("click", function(e){
         e.preventDefault;
-        let valueE = e.target;
-        console.log(valueE);
         let quantiteProduit = document.querySelector("#quantiteProduit").value;
+        // ajout d'une propriété catégorie dans les objets produits
+        Object.defineProperty(produit, "categorie", {
+            value: produitCategorie,
+            configurable: true,
+            enumerable: true
+        });
         // ajoute l'objet produit x la quantité dans un array pour locale storage
         for(i = 0; i < quantiteProduit; i++) {
             contenuPanier.push(produit);

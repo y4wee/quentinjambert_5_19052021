@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm, .headerConfirmation, .footerConfirmation, .confirmationMessage, .mainConfirmation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -618,7 +618,6 @@ main {
 .formOverlayClose:hover {
   background-color: #f79711;
   color: black;
-  font-size: 1.4em;
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -649,7 +648,7 @@ main {
   background: transparent;
   font-size: 0.9em;
   margin-left: 20px;
-  min-width: 340px;
+  width: calc(100% - 120px);
 }
 
 .commandeForm div {
@@ -686,5 +685,86 @@ main {
   color: black;
   -webkit-box-shadow: 0 2px 8px black;
           box-shadow: 0 2px 8px black;
+}
+
+.headerConfirmation {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerConfirmation h1 {
+  font-family: 'belligerent';
+  font-size: 7em;
+  font-weight: lighter;
+  margin-right: 10%;
+  color: #261624;
+}
+
+.footerConfirmation {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+}
+
+.footerConfirmation a {
+  font-size: 6em;
+  color: #261624;
+  text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.confirmationMessage {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #F3E9F1;
+  text-shadow: 0 0 20px #E68A08;
+}
+
+.confirmationMessage span {
+  font-family: 'belligerent';
+  font-size: 6em;
+  font-weight: lighter;
+  margin-bottom: 50px;
+}
+
+.confirmationMessage .far {
+  font-size: 7em;
+  -webkit-transform-origin: 0;
+          transform-origin: 0;
+  -webkit-transform: rotateZ(-30deg);
+          transform: rotateZ(-30deg);
+  margin-top: 50px;
+}
+
+.mainConfirmation {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */

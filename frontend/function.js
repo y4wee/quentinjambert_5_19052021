@@ -45,7 +45,21 @@ function prixPanier() {
     document.querySelector(".pageCommandeTotalPrix").textContent = totalPrixPanier + " €";
 }
 
-// validation input text 
-function isValid() {
-    
+// fonction pour les requetes vers le backend en fonction de la categorie produit, stock la reponse serveur et supprime le contenu du pannier 
+async function postRequest(categorie, categoriePost) {
+    let response = await fetch(`http://localhost:3000/api/${categorie}/order`, {
+        method: "POST",
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(categoriePost)
+    })
+    if (response.ok) {
+        let data = await response.json();
+        sessionStorage.setItem(`data${categorie}`, JSON.stringify(data));
+        localStorage.removeItem("contenuPanier");
+        window.location.href = "./confirmation.html";
+    } else {
+        console.error('Retour du serveur : ', response.status);
+    }
 }
