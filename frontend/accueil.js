@@ -1,23 +1,24 @@
-/*
-création onglet
-*/
-let onglets = document.querySelectorAll(".onglet a");
-for (let onglet of onglets) {
-    onglet.addEventListener('click', function(e) {
+//  animation de la barre de navigation
+document.querySelector(".navSlideClose").addEventListener("click", navControl);
+document.querySelector(".overlayOpacity").addEventListener("click", navControl);
 
-        e.preventDefault();
-        let div = this.parentNode.parentNode.parentNode;
-        let li = this.parentNode;
-        let ongletActif = div.querySelector('.onglet .ongletActive');
-        let contenuActif = div.querySelector('.contenu .contenuActive');
+
+// systeme d'onglet dans la navigation
+document.querySelectorAll(".navSlide a").forEach(onglet => {
+    onglet.addEventListener("click", function(e) {
+        e.preventDefault;
+        let div = this.parentElement.nextElementSibling;
+        let ongletActif = this.parentElement.querySelector('.ongletActive');
+        let contenuActif = div.querySelector('.contenuActive');
 
         /** gere les classe active des onglets */
-        if (li.classList.contains('ongletActive')) {
+        if (this.classList.contains('ongletActive')) {
             return false;
-        } else if (ongletActif) {
+        } 
+        else if (ongletActif) {
             ongletActif.classList.remove('ongletActive');
         }
-        li.classList.add('ongletActive')
+        this.classList.add('ongletActive')
 
         /** gere les classe active des contenus */
         if (contenuActif) {
@@ -25,8 +26,7 @@ for (let onglet of onglets) {
         }
         div.querySelector(this.getAttribute('href')).classList.add('contenuActive');
     })
-};
-
+})
 /** contenu des listes de produits*/
 function contenuBuilding(categorie) {
     fetch("http://localhost:3000/api/" + categorie)

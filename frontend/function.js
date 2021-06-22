@@ -1,4 +1,29 @@
+// fonction pour ouvrir ou fermer la navigation
+function navControl(e) {
+    e.preventDefault;
+    let overlayOpac = document.querySelector(".overlayOpacity");
+    let navSlide = document.querySelector(".navSlide");
 
+    if (overlayOpac.classList.contains("displayOff")) {
+        overlayOpac.classList.remove("displayOff");
+    } else {
+        overlayOpac.classList.add("displayOff");
+    }
+
+    if (navSlide.classList.contains("animationSlide")) {
+        navSlide.classList.remove("animationSlide");
+    } else {
+        navSlide.classList.add("animationSlide");
+    }
+
+    document.querySelectorAll(".navSlideClose span").forEach(segment => {
+        if (segment.classList.contains("animation")) {
+            segment.classList.remove("animation");
+        } else {
+            segment.classList.add("animation");
+        }
+    })
+}
 // stock le panier dans le local storage
 function saveStorage() {
     localStorage.setItem("contenuPanier", JSON.stringify(contenuPanier));

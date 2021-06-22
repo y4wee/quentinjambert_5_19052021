@@ -1,0 +1,26 @@
+@keyframes navButtonUp {
+    100% {
+        left: auto;
+        transform: rotateZ(-45deg);
+    }
+}
+@keyframes navButtonDown {
+    100% {
+        right: auto;
+        transform: rotateZ(45deg);
+    }
+}
+@keyframes navSlide {
+    100% {
+        box-shadow: -10px 0 35px $mainColor;
+        transform: translateX(250px);
+    }
+}
+@keyframes opacityKey {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm, .headerConfirmation, .footerConfirmation, .confirmationMessage, .mainConfirmation {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .navSlide, .navSlideClose, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm, .headerConfirmation, .footerConfirmation, .confirmationMessage, .mainConfirmation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,13 +15,8 @@ body, .contenuArticleCarteImage, .contenuArticleCarteName, .onglet, .onglet li, 
   font-weight: lighter;
 }
 
-.onglet {
-  font-family: 'belligerent';
-  font-size: 2.5em;
-}
-
 body {
-  font-family: sans-serif;
+  font-family: Verdana, sans-serif;
 }
 
 .detailNom {
@@ -48,6 +43,74 @@ body {
 
 .displayOff {
   display: none;
+}
+
+@-webkit-keyframes navButtonUp {
+  100% {
+    left: auto;
+    -webkit-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg);
+  }
+}
+
+@keyframes navButtonUp {
+  100% {
+    left: auto;
+    -webkit-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg);
+  }
+}
+
+@-webkit-keyframes navButtonDown {
+  100% {
+    right: auto;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+}
+
+@keyframes navButtonDown {
+  100% {
+    right: auto;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+}
+
+@-webkit-keyframes navSlide {
+  100% {
+    -webkit-box-shadow: -10px 0 35px #F3E9F1;
+            box-shadow: -10px 0 35px #F3E9F1;
+    -webkit-transform: translateX(250px);
+            transform: translateX(250px);
+  }
+}
+
+@keyframes navSlide {
+  100% {
+    -webkit-box-shadow: -10px 0 35px #F3E9F1;
+            box-shadow: -10px 0 35px #F3E9F1;
+    -webkit-transform: translateX(250px);
+            transform: translateX(250px);
+  }
+}
+
+@-webkit-keyframes opacityKey {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityKey {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .contenuArticleCarte {
@@ -110,41 +173,120 @@ body {
           transform: translateY(0%);
 }
 
-.onglet {
-  list-style-type: none;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  background-color: #F3E9F1;
-  min-width: 950px;
+.navSlide {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  width: 250px;
+  background-color: #261624;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-.onglet li {
+.navSlide.animationSlide {
+  -webkit-box-shadow: -10px 0 35px #F3E9F1;
+          box-shadow: -10px 0 35px #F3E9F1;
+  -webkit-transform: translateX(250px);
+          transform: translateX(250px);
+}
+
+.navSlide .fas {
+  font-size: 10em;
+  margin: 30px 0 40px 15px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#E68A08), to(#8F5BFE));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navSlide a {
+  text-decoration: none;
+  color: #F3E9F1;
+  font-family: Verdana, sans-serif;
+  font-size: 1.6em;
+  margin: 20px 0 0 50px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.navSlide a:hover {
+  color: #E68A08;
+}
+
+.navSlide .ongletActive {
+  color: #E68A08;
+}
+
+.navSlideClose {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 55px;
-  width: 30%;
-}
-
-.onglet li a {
-  color: #261624;
-  text-decoration: none;
-}
-
-.onglet .ongletActive {
+  position: absolute;
+  top: 48%;
+  left: 215px;
+  height: 70px;
+  width: 70px;
   background-color: #261624;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  color: #F3E9F1;
+  border-radius: 50%;
+  font-size: 1.7em;
+  cursor: pointer;
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
 }
 
-.onglet .ongletActive a {
-  color: #F3E9F1;
+.navSlideCloseUp {
+  position: absolute;
+  left: 25px;
+  -webkit-transform: rotateZ(46deg);
+          transform: rotateZ(46deg);
+  -webkit-transition: all 0.9s ease;
+  transition: all 0.9s ease;
+}
+
+.navSlideCloseUp.animation {
+  left: auto;
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+.navSlideCloseDown {
+  position: absolute;
+  right: 25px;
+  -webkit-transform: rotateZ(-46deg);
+          transform: rotateZ(-46deg);
+  -webkit-transition: all 0.9s ease;
+  transition: all 0.9s ease;
+}
+
+.navSlideCloseDown.animation {
+  right: auto;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.navSlideClose:hover span {
+  color: #E68A08;
+}
+
+.overlayOpacity {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  -webkit-animation: opacityKey 0.3s ease-out forwards;
+          animation: opacityKey 0.3s ease-out forwards;
 }
 
 .header {
@@ -206,9 +348,7 @@ body {
 
 .header .fas {
   font-size: 1.8em;
-  background: -webkit-gradient(linear, left top, right bottom, from(#E68A08), to(#8F5BFE));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #F3E9F1;
 }
 
 .footer {
