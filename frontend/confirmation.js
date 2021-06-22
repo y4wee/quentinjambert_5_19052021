@@ -27,4 +27,10 @@ document.querySelector(".mainConfirmation").innerHTML += `<div class="mainConfir
                                                             <div class="mainConfirmationDetailOrder"> commande N°: ${oneData.orderId} </div>
                                                             <div class="mainConfirmationDetailPrix"> Total: ${prixCommande} </div>
                                                           </div>
-                                                         `
+                                                         `;
+
+// clear session storage lorsqu'on retourne a l'accueil 
+document.querySelector(".footerConfirmation a").addEventListener("click", (e) => {
+    e.preventDefault;
+    sessionStorage.clear()
+})
