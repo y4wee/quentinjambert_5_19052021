@@ -54,11 +54,11 @@
 
                     <div class="commandeFormNom">
                         <label for="lastName">Nom :</label>
-                        <input type="text" name="lastName" id="lastName" required>
+                        <input type="text" name="lastName" id="lastName" pattern="[a-zA-Z]{1,}" required>
                     </div>
                     <div class="commandeFormPrenom">
                         <label for="firstName">Prénom :</label>
-                        <input type="text" name="firstName" id="firstName" required>
+                        <input type="text" name="firstName" id="firstName" pattern="[a-zA-Z]{1,}" required>
                     </div>
                     <div class="commandeFormAdresse">
                         <label for="address">Adresse :</label>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="commandeFormVille">
                         <label for="city">Ville :</label>
-                        <input type="text" name="city" id="city" required>
+                        <input type="text" name="city" id="city" pattern="[a-zA-Z]{1,}" required>
                     </div>
                     <div class="commandeFormEmail">
                         <label for="email">Em@il :</label>

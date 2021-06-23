@@ -12,8 +12,10 @@ function navControl(e) {
 
     if (navSlide.classList.contains("animationSlide")) {
         navSlide.classList.remove("animationSlide");
+        document.querySelector(".headerLogo h1").style.transform = "translateX(0)"
     } else {
         navSlide.classList.add("animationSlide");
+        document.querySelector(".headerLogo h1").style.transform = "translateX(250px)"
     }
 
     document.querySelectorAll(".navSlideClose span").forEach(segment => {

@@ -45,56 +45,6 @@ body {
   display: none;
 }
 
-@-webkit-keyframes navButtonUp {
-  100% {
-    left: auto;
-    -webkit-transform: rotateZ(-45deg);
-            transform: rotateZ(-45deg);
-  }
-}
-
-@keyframes navButtonUp {
-  100% {
-    left: auto;
-    -webkit-transform: rotateZ(-45deg);
-            transform: rotateZ(-45deg);
-  }
-}
-
-@-webkit-keyframes navButtonDown {
-  100% {
-    right: auto;
-    -webkit-transform: rotateZ(45deg);
-            transform: rotateZ(45deg);
-  }
-}
-
-@keyframes navButtonDown {
-  100% {
-    right: auto;
-    -webkit-transform: rotateZ(45deg);
-            transform: rotateZ(45deg);
-  }
-}
-
-@-webkit-keyframes navSlide {
-  100% {
-    -webkit-box-shadow: -10px 0 35px #F3E9F1;
-            box-shadow: -10px 0 35px #F3E9F1;
-    -webkit-transform: translateX(250px);
-            transform: translateX(250px);
-  }
-}
-
-@keyframes navSlide {
-  100% {
-    -webkit-box-shadow: -10px 0 35px #F3E9F1;
-            box-shadow: -10px 0 35px #F3E9F1;
-    -webkit-transform: translateX(250px);
-            transform: translateX(250px);
-  }
-}
-
 @-webkit-keyframes opacityKey {
   from {
     opacity: 0;
@@ -248,8 +198,8 @@ body {
   left: 25px;
   -webkit-transform: rotateZ(46deg);
           transform: rotateZ(46deg);
-  -webkit-transition: all 0.9s ease;
-  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease-in-out;
+  transition: all 0.9s ease-in-out;
 }
 
 .navSlideCloseUp.animation {
@@ -263,8 +213,8 @@ body {
   right: 25px;
   -webkit-transform: rotateZ(-46deg);
           transform: rotateZ(-46deg);
-  -webkit-transition: all 0.9s ease;
-  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease-in-out;
+  transition: all 0.9s ease-in-out;
 }
 
 .navSlideCloseDown.animation {
@@ -311,6 +261,8 @@ body {
 .headerLogo h1 {
   color: #261624;
   margin-left: 20px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .headerPanier {
@@ -420,8 +372,7 @@ main {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background-color: #261624;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-radius: 30px;
   padding: 2% 0;
 }
 
@@ -522,7 +473,7 @@ main {
   margin: 25px auto;
   background-color: #b56c06;
   color: #261624;
-  font-weight: bold;
+  font-size: 0.85em;
   border-radius: 30px;
   -webkit-box-shadow: 0 2px 5px black;
           box-shadow: 0 2px 5px black;
@@ -788,7 +739,7 @@ main {
   background: transparent;
   font-size: 0.9em;
   margin-left: 20px;
-  width: calc(100% - 120px);
+  width: calc(100% - 130px);
 }
 
 .commandeForm div {

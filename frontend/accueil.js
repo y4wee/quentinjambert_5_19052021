@@ -1,8 +1,6 @@
 //  animation de la barre de navigation
 document.querySelector(".navSlideClose").addEventListener("click", navControl);
 document.querySelector(".overlayOpacity").addEventListener("click", navControl);
-
-
 // systeme d'onglet dans la navigation
 document.querySelectorAll(".navSlide a").forEach(onglet => {
     onglet.addEventListener("click", function(e) {
@@ -11,7 +9,7 @@ document.querySelectorAll(".navSlide a").forEach(onglet => {
         let ongletActif = this.parentElement.querySelector('.ongletActive');
         let contenuActif = div.querySelector('.contenuActive');
 
-        /** gere les classe active des onglets */
+        // gere les classe active des onglets
         if (this.classList.contains('ongletActive')) {
             return false;
         } 
@@ -19,15 +17,14 @@ document.querySelectorAll(".navSlide a").forEach(onglet => {
             ongletActif.classList.remove('ongletActive');
         }
         this.classList.add('ongletActive')
-
-        /** gere les classe active des contenus */
+        // gere les classe active des contenus
         if (contenuActif) {
             contenuActif.classList.remove('contenuActive');
         }
         div.querySelector(this.getAttribute('href')).classList.add('contenuActive');
     })
 })
-/** contenu des listes de produits*/
+// contenu des listes de produits
 function contenuBuilding(categorie) {
     fetch("http://localhost:3000/api/" + categorie)
     .then(function(data) {

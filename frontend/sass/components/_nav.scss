@@ -58,7 +58,7 @@
             position: absolute;
             left: 25px;
             transform: rotateZ(46deg);
-            transition: all 0.9s ease;
+            transition: all 0.9s ease-in-out;
             &.animation {
                 left: auto;
                 transform: rotateZ(-45deg);
@@ -68,7 +68,7 @@
             position: absolute;
             right: 25px;
             transform: rotateZ(-46deg);
-            transition: all 0.9s ease;
+            transition: all 0.9s ease-in-out;
             &.animation {
                 right: auto;
                 transform: rotateZ(45deg);
