@@ -11,7 +11,8 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
 .then(function(produit) {
     // changement du title de la page en fonction du produit
     document.title = "- Ori" + produitCategorie + " - " + produit.name + " -";
-
+    // changement du h1 du header
+    document.querySelector(".headerLogo h1").textContent = `Ori${produitCategorie}`
     // recuperation des informations de modification de produit
     let optionSort = Object.keys(produit)[0];
     let produitOptions = Object.values(produit)[0];
@@ -61,7 +62,5 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
         }
         saveStorage();
         changePanierNb();
-        
-        return alert(`${produit.name} a été ajouté au panier`);
     })
 })

@@ -7,14 +7,18 @@
     margin-bottom: 100px;
     // partie gauche du header logo orinoco
     &Logo {
-        @extend %flex;
-        height: auto;
-        align-items: center;
-        & h1 {
-            color: $secondColor;
-            margin-left: 20px;
-            transition: all 0.3s ease-out
-        }
+        width: fit-content;
+        margin-left: 3%;
+    }
+    & h1 {
+        color: $secondColor;
+        margin-left: 20px;
+        transition: all 0.3s ease-out;
+        user-select: none;
+        margin: 0;
+    }
+    & a {
+        text-decoration: none;
     }
     // logo pannier du header
     &Panier {
@@ -36,7 +40,6 @@
             background-color: $color3;
             color: $secondColor;
             font-weight: bold;
-            text-decoration: none;
         }
     }
     //logo pannier fontawesome 

@@ -6,6 +6,7 @@
         font-weight: lighter;
         margin-right: 10%;
         color: $secondColor;
+        user-select: none;
     }
 }
 // header confirmation pour retourner a la page accueil
@@ -14,10 +15,17 @@
     justify-content: center;
     margin-bottom: 50px;
     & a {
-        font-size: 6em;
-        color: $secondColor;
         text-decoration: none;
         width: fit-content;
+    }
+    & .far {
+        color: $secondColor;
+        font-size: 6em;
+        transition: all 0.4s ease-out;
+        &:hover {
+            color: $color3;
+            transform: rotateZ(-360deg);
+        }
     }
 }
 //message au chargement de la page 
@@ -34,6 +42,7 @@
     background-color: rgba(0,0,0,0.9);
     color: $mainColor;
     text-shadow: 0 0 20px $color3;
+    user-select: none;
     & span {
         font-family: 'belligerent';
         font-size: 6em;
@@ -49,5 +58,18 @@
 }
 
 .mainConfirmation {
-    @include flexcenter;
+    @extend %flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 250px;
+    &Merci {
+        border-bottom: solid 1px $secondColor;
+    }
+    &Detail {
+        margin-top: 30px;
+    }
+    & .orderId {
+        background-color: $color3;
+    }
 }

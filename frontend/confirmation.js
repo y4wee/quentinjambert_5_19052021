@@ -23,8 +23,8 @@ document.querySelector(".mainConfirmation").innerHTML += `<div class="mainConfir
                                                             droit de rétractation, nous vous invitons à nous contacter.
                                                           </div>
                                                           <div class="mainConfirmationDetail">
-                                                            <span>Détails de votre commande:</span>
-                                                            <div class="mainConfirmationDetailOrder"> commande N°: ${oneData.orderId} </div>
+                                                            <span><strong>Détails de votre commande:</strong></span>
+                                                            <div class="mainConfirmationDetailOrder"> commande N°: <span class="orderId">${oneData.orderId} </span></div>
                                                             <div class="mainConfirmationDetailPrix"> Total: ${prixCommande} </div>
                                                           </div>
                                                          `;

@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .navSlide, .navSlideClose, .header, .headerLogo, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm, .headerConfirmation, .footerConfirmation, .confirmationMessage, .mainConfirmation {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .navSlide, .navSlideClose, .header, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm, .headerConfirmation, .footerConfirmation, .confirmationMessage, .mainConfirmation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,10 +101,10 @@ body {
   left: 0;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
 }
 
 .contenuArticleCarteName h2 {
@@ -119,8 +119,8 @@ body {
 }
 
 .contenuArticleCarte:hover .contenuArticleCarteName {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .navSlide {
@@ -252,17 +252,26 @@ body {
 }
 
 .headerLogo {
-  height: auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 3%;
 }
 
-.headerLogo h1 {
+.header h1 {
   color: #261624;
   margin-left: 20px;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0;
+}
+
+.header a {
+  text-decoration: none;
 }
 
 .headerPanier {
@@ -295,7 +304,6 @@ body {
   background-color: #E68A08;
   color: #261624;
   font-weight: bold;
-  text-decoration: none;
 }
 
 .header .fas {
@@ -354,7 +362,7 @@ body {
 }
 
 main {
-  max-width: 65%;
+  max-width: 62%;
   margin: auto;
 }
 
@@ -409,6 +417,14 @@ main {
 .produitChoisiBack .fas {
   color: #F3E9F1;
   font-size: 1.7em;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.produitChoisiBack:hover .fas {
+  color: #E68A08;
+  -webkit-transform: rotateZ(-360deg);
+          transform: rotateZ(-360deg);
 }
 
 .produitChoisiImage {
@@ -434,6 +450,7 @@ main {
 
 .produitChoisiDetail h1 {
   font-size: 1.8em;
+  color: #E68A08;
 }
 
 .produitChoisiDetail label {
@@ -442,17 +459,18 @@ main {
 }
 
 .produitChoisiDetail select {
-  width: 20%;
+  width: 110px;
   height: 20px;
   outline: none;
-  border-radius: 30px;
+  border: none;
 }
 
 .produitChoisiDetail input {
-  width: 20%;
+  width: 110px;
   height: 20px;
+  padding: 0;
   outline: none;
-  border-radius: 30px;
+  border: none;
   text-align: center;
 }
 
@@ -471,24 +489,23 @@ main {
   height: 45px;
   width: 180px;
   margin: 25px auto;
-  background-color: #b56c06;
+  background-color: #E68A08;
   color: #261624;
   font-size: 0.85em;
   border-radius: 30px;
-  -webkit-box-shadow: 0 2px 5px black;
-          box-shadow: 0 2px 5px black;
+  -webkit-box-shadow: 0 1px 5px black;
+          box-shadow: 0 1px 5px black;
   cursor: pointer;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .addPanier:hover {
-  background-color: #E68A08;
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
-  -webkit-box-shadow: 0 3px 10px black;
-          box-shadow: 0 3px 10px black;
-  color: black;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #f79711;
+  -webkit-box-shadow: 0 2px 10px black;
+          box-shadow: 0 2px 10px black;
 }
 
 .pageCommande {
@@ -793,6 +810,10 @@ main {
   font-weight: lighter;
   margin-right: 10%;
   color: #261624;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .footerConfirmation {
@@ -803,12 +824,23 @@ main {
 }
 
 .footerConfirmation a {
-  font-size: 6em;
-  color: #261624;
   text-decoration: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.footerConfirmation .far {
+  color: #261624;
+  font-size: 6em;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.footerConfirmation .far:hover {
+  color: #E68A08;
+  -webkit-transform: rotateZ(-360deg);
+          transform: rotateZ(-360deg);
 }
 
 .confirmationMessage {
@@ -832,6 +864,10 @@ main {
   background-color: rgba(0, 0, 0, 0.9);
   color: #F3E9F1;
   text-shadow: 0 0 20px #E68A08;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .confirmationMessage span {
@@ -851,11 +887,24 @@ main {
 }
 
 .mainConfirmation {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 250px;
+}
+
+.mainConfirmationMerci {
+  border-bottom: solid 1px #261624;
+}
+
+.mainConfirmationDetail {
+  margin-top: 30px;
+}
+
+.mainConfirmation .orderId {
+  background-color: #E68A08;
 }
 /*# sourceMappingURL=main.css.map */
