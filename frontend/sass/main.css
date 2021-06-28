@@ -1,4 +1,4 @@
-body, .contenuArticleCarteImage, .contenuArticleCarteName, .navSlide, .navSlideClose, .header, .headerPanier, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm, .headerConfirmation, .footerConfirmation, .confirmationMessage, .mainConfirmation {
+body, .contenuArticleCarteImage, .contenuArticleCarteName, .navSlide, .navSlideClose, .header, .headerPanier, .headerPanierLien, .headerPanierNumber, .footer, .footerSocial, .produitChoisi, .produitChoisiBack, .produitChoisiDetail, .addPanier, .panierMessage, .panierMessageText, .pageCommande, .pageCommandePanier, .pageCommandePanierProduit, .pageCommandePanierProduitDetail, .pageCommandePanierProduitDetail .quantiteAdd, .pageCommandePanierProduitDetail .quantiteRemove, .pageCommandePanierProduitRemove, .pageCommandeTotal, .pageCommandeVide, .formOverlay, .formOverlayClose, .commandeForm, .headerConfirmation, .footerConfirmation, .confirmationMessage, .mainConfirmation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,6 +60,132 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes openUp {
+  from {
+    left: 25px;
+    -webkit-transform: rotateZ(46deg);
+            transform: rotateZ(46deg);
+  }
+  to {
+    left: 32px;
+    -webkit-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg);
+  }
+}
+
+@keyframes openUp {
+  from {
+    left: 25px;
+    -webkit-transform: rotateZ(46deg);
+            transform: rotateZ(46deg);
+  }
+  to {
+    left: 32px;
+    -webkit-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg);
+  }
+}
+
+@-webkit-keyframes openDown {
+  from {
+    right: 25px;
+    -webkit-transform: rotateZ(-46deg);
+            transform: rotateZ(-46deg);
+  }
+  to {
+    right: 32px;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+}
+
+@keyframes openDown {
+  from {
+    right: 25px;
+    -webkit-transform: rotateZ(-46deg);
+            transform: rotateZ(-46deg);
+  }
+  to {
+    right: 32px;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+}
+
+@-webkit-keyframes closeUp {
+  from {
+    left: 32px;
+    -webkit-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg);
+  }
+  to {
+    left: 25px;
+    -webkit-transform: rotateZ(46deg);
+            transform: rotateZ(46deg);
+  }
+}
+
+@keyframes closeUp {
+  from {
+    left: 32px;
+    -webkit-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg);
+  }
+  to {
+    left: 25px;
+    -webkit-transform: rotateZ(46deg);
+            transform: rotateZ(46deg);
+  }
+}
+
+@-webkit-keyframes closeDown {
+  from {
+    right: 32px;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+  to {
+    right: 25px;
+    -webkit-transform: rotateZ(-46deg);
+            transform: rotateZ(-46deg);
+  }
+}
+
+@keyframes closeDown {
+  from {
+    right: 32px;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+  to {
+    right: 25px;
+    -webkit-transform: rotateZ(-46deg);
+            transform: rotateZ(-46deg);
+  }
+}
+
+@-webkit-keyframes messagePanier {
+  15%, 85% {
+    opacity: 1;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes messagePanier {
+  15%, 85% {
+    opacity: 1;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -163,8 +289,8 @@ body {
   font-family: Verdana, sans-serif;
   font-size: 1.6em;
   margin: 20px 0 0 50px;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 .navSlide a:hover {
@@ -198,14 +324,16 @@ body {
   left: 25px;
   -webkit-transform: rotateZ(46deg);
           transform: rotateZ(46deg);
-  -webkit-transition: all 0.9s ease-in-out;
-  transition: all 0.9s ease-in-out;
 }
 
-.navSlideCloseUp.animation {
-  left: auto;
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
+.navSlideCloseUp.openUp {
+  -webkit-animation: openUp 0.5s ease-in-out both;
+          animation: openUp 0.5s ease-in-out both;
+}
+
+.navSlideCloseUp.closeUp {
+  -webkit-animation: closeUp 0.5s ease-in-out both;
+          animation: closeUp 0.5s ease-in-out both;
 }
 
 .navSlideCloseDown {
@@ -213,14 +341,16 @@ body {
   right: 25px;
   -webkit-transform: rotateZ(-46deg);
           transform: rotateZ(-46deg);
-  -webkit-transition: all 0.9s ease-in-out;
-  transition: all 0.9s ease-in-out;
 }
 
-.navSlideCloseDown.animation {
-  right: auto;
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
+.navSlideCloseDown.openDown {
+  -webkit-animation: openDown 0.5s ease-in-out both;
+          animation: openDown 0.5s ease-in-out both;
+}
+
+.navSlideCloseDown.closeDown {
+  -webkit-animation: closeDown 0.5s ease-in-out both;
+          animation: closeDown 0.5s ease-in-out both;
 }
 
 .navSlideClose:hover span {
@@ -281,12 +411,21 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 5%;
+  position: relative;
+}
+
+.headerPanierLien {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #261624;
   height: 70px;
   width: 70px;
   border-radius: 45px;
-  margin-right: 5%;
-  position: relative;
 }
 
 .headerPanierNumber {
@@ -382,6 +521,23 @@ main {
   background-color: #261624;
   border-radius: 30px;
   padding: 2% 0;
+}
+
+.mainAccueilPresentation {
+  max-width: 700px;
+  color: #261624;
+}
+
+.mainAccueilPresentation h1 {
+  font-size: 1.8em;
+}
+
+.mainAccueilPresentation h1 .presentationH1Color {
+  color: #E68A08;
+}
+
+.mainAccueilPresentation p {
+  font-size: 1.2em;
 }
 
 .produitChoisi {
@@ -506,6 +662,49 @@ main {
   background-color: #f79711;
   -webkit-box-shadow: 0 2px 10px black;
           box-shadow: 0 2px 10px black;
+}
+
+.panierMessage {
+  position: absolute;
+  top: 80px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0;
+}
+
+.panierMessageTriangle {
+  height: 0;
+  width: 0;
+  border-right: 9px solid transparent;
+  border-bottom: 15px solid #E68A08;
+  border-left: 9px solid transparent;
+}
+
+.panierMessageText {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #E68A08;
+  color: #261624;
+  width: 140px;
+  height: 70px;
+  border-radius: 30px;
+}
+
+.panierMessageAnimation {
+  -webkit-animation: messagePanier 0.8s ease-in-out;
+          animation: messagePanier 0.8s ease-in-out;
 }
 
 .pageCommande {
@@ -748,6 +947,11 @@ main {
   -webkit-box-shadow: 0 0 100px #F3E9F1;
           box-shadow: 0 0 100px #F3E9F1;
   overflow: hidden;
+}
+
+.commandeForm h2 {
+  font-size: 1.2em;
+  color: #261624;
 }
 
 .commandeForm div input {

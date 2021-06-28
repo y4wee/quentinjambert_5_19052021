@@ -1,8 +1,59 @@
+// animation opacity
 @keyframes opacityKey {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
+    }
+}
+// animation bouton de navigation open/close
+@keyframes openUp {
+    from {
+        left: 25px;
+        transform: rotateZ(46deg);
+    }
+    to {
+        left: 32px;
+        transform: rotateZ(-45deg);
+    }
+}
+@keyframes openDown {
+    from {
+        right: 25px;
+        transform: rotateZ(-46deg);
+    }
+    to {
+        right: 32px;
+        transform: rotateZ(45deg);
+    }
+}
+@keyframes closeUp {
+    from {
+        left: 32px;
+        transform: rotateZ(-45deg);
+    }
+    to {
+        left: 25px;
+        transform: rotateZ(46deg);
+    }
+}
+@keyframes closeDown {
+    from {
+        right: 32px;
+        transform: rotateZ(45deg);
+    }
+    to {
+        right: 25px;
+        transform: rotateZ(-46deg);
+    }
+}
+@keyframes messagePanier {
+    15%, 85% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 0;
     }
 }

@@ -45,6 +45,7 @@ document.querySelectorAll(".commandeForm div input").forEach(input => {
             configurable: true,
             enumerable: true
         })
+        console.log(contact);
     })
 })
 
@@ -64,6 +65,9 @@ document.querySelector(".commandeForm").addEventListener("submit", (e) => {
         contact,
         products: furnitureProducts
     };
+    console.log(teddiesPost);
+    console.log(camerasPost);
+    console.log(furniturePost);
     // si des produits teddy sont present alors envoie une requete Post vers teddies/order
     if (teddiesPost.products.length > 0) {
         postRequest("teddies", teddiesPost);

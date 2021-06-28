@@ -8,7 +8,7 @@
             content="width=device-width, initial-scale=1.0, user-scalable=yes"
         />
 
-        <link rel="stylesheet" href="./sass/main.css" />
+        <link rel="stylesheet" href="../sass/main.css" />
 
         <script
             src="https://kit.fontawesome.com/853ad8b0da.js"
@@ -24,10 +24,18 @@
             <div class="headerLogo">
                 <h1>Orinoco</h1>
             </div>
-            <a href="./panier.html" class="headerPanier">
-                <i class="fas fa-shopping-bag"></i>
-                <div class="headerPanierNumber">0</div>
-            </a>
+            <div class="headerPanier">
+                <a href="./panier.html" class="headerPanierLien">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div class="headerPanierNumber">0</div>
+                </a>
+                <div class="panierMessage">
+                    <div class="panierMessageTriangle"></div>
+                    <div class="panierMessageText">
+                        produit ajouté
+                    </div>
+                </div>
+            </div>
         </header>
 
         <main class="mainProduit"></main>
@@ -42,9 +50,9 @@
             <a href="#" class="footerContact">Nous contacter</a>
         </footer>
 
-        <script src="./function.js"></script>
-        <script src="./panier.js"></script>
-        <script src="./produit.js"></script>
+        <script src="../js/function.js"></script>
+        <script src="../js/panier.js"></script>
+        <script src="../js/produit.js"></script>
 
     </body>
 </html>

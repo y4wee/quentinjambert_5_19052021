@@ -22,8 +22,17 @@ document.querySelectorAll(".navSlide a").forEach(onglet => {
             contenuActif.classList.remove('contenuActive');
         }
         div.querySelector(this.getAttribute('href')).classList.add('contenuActive');
+        document.querySelector(".mainAccueilPresentation").classList.add('displayOff');
     })
 })
+// afichage lors du retour de la page produit 
+let hrefProduit = JSON.parse(sessionStorage.getItem("hrefProduit"));
+if (hrefProduit != null) {
+    document.querySelector(`a[href="#${hrefProduit}"]`).classList.add("ongletActive");
+    document.querySelector(`#${hrefProduit}`).classList.add("contenuActive");
+    document.querySelector(".mainAccueilPresentation").classList.add('displayOff');
+    sessionStorage.removeItem("hrefProduit");
+}
 // contenu des listes de produits
 function contenuBuilding(categorie) {
     fetch("http://localhost:3000/api/" + categorie)

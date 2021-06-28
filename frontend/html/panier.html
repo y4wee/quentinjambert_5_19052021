@@ -8,7 +8,7 @@
             content="width=device-width, initial-scale=1.0, user-scalable=yes"
         />
 
-        <link rel="stylesheet" href="./sass/main.css" />
+        <link rel="stylesheet" href="../sass/main.css" />
 
         <script
             src="https://kit.fontawesome.com/853ad8b0da.js"
@@ -24,10 +24,12 @@
             <a class="headerLogo" href="./accueil.html" >
                 <h1>Orinoco</h1>
             </a>
-            <a href="#" class="headerPanier">
-                <i class="fas fa-shopping-bag"></i>
-                <div class="headerPanierNumber">0</div>
-            </a>
+            <div class="headerPanier">
+                <a href="./panier.html" class="headerPanierLien">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div class="headerPanierNumber">0</div>
+                </a>
+            </div>
         </header>
 
         <main class="pageCommande">
@@ -49,13 +51,15 @@
                 <form class="commandeForm" method="POST">
                     <span class="formOverlayClose">X</span>
 
+                    <h2>vos informations personnelles</h2>
+
                     <div class="commandeFormNom">
                         <label for="lastName">Nom :</label>
-                        <input type="text" name="lastName" id="lastName" pattern="[a-zA-Z]{1,}" required>
+                        <input type="text" name="lastName" id="lastName" pattern="[a-zA-Zàéèêî'\s-]{1,}" required>
                     </div>
                     <div class="commandeFormPrenom">
                         <label for="firstName">Prénom :</label>
-                        <input type="text" name="firstName" id="firstName" pattern="[a-zA-Z]{1,}" required>
+                        <input type="text" name="firstName" id="firstName" pattern="[a-zA-Zàéèêî'\s\-]{1,}" required>
                     </div>
                     <div class="commandeFormAdresse">
                         <label for="address">Adresse :</label>
@@ -63,7 +67,7 @@
                     </div>
                     <div class="commandeFormVille">
                         <label for="city">Ville :</label>
-                        <input type="text" name="city" id="city" pattern="[a-zA-Z]{1,}" required>
+                        <input type="text" name="city" id="city" pattern="[a-zA-Zàéèêî'\s\-]{1,}" required>
                     </div>
                     <div class="commandeFormEmail">
                         <label for="email">Em@il :</label>
@@ -84,9 +88,9 @@
             <a href="#" class="footerContact">Nous contacter</a>
         </footer>
         
-        <script src="./function.js"></script>
-        <script src="./panier.js"></script>
-        <script src="./form.js"></script>
+        <script src="../js/function.js"></script>
+        <script src="../js/panier.js"></script>
+        <script src="../js/form.js"></script>
 
     </body>
 </html>

@@ -19,7 +19,7 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
     
     // implementation html page produit
     document.querySelector("main").innerHTML =  `<article class="produitChoisi">
-                                                     <a class="produitChoisiBack" href="./accueil.html"><i class="fas fa-arrow-left"></i></a>
+                                                     <a class="produitChoisiBack" href="./accueil.html#ori${produitCategorie}"><i class="fas fa-arrow-left"></i></a>
                                                      <section class="produitChoisiImage"></section>
                                                      <section class="produitChoisiDetail">
                                                          <h1>${produit.name}</h1>
@@ -28,7 +28,7 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
                                                          <select name="${optionSort}" id="optionsProduit" required></select>
 
                                                          <label for="quantiteProduit">quantité</label>
-                                                         <input type="number" id="quantiteProduit" name="quantite" min="1" value="1">
+                                                         <input type="number" id="quantiteProduit" name="quantite" min="1" max="15" value="1">
 
                                                          <span class="produitChoisiDetailPrice">${produit.price/100} €</span>
                                                          <span class="produitChoisiDetailDescription">
@@ -47,6 +47,7 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
     }
 
     // event pour ajouter des produits au panier
+    let messageAjout = document.querySelector(".panierMessage");
     document.querySelector(".addPanier").addEventListener("click", function(e){
         e.preventDefault;
         let quantiteProduit = document.querySelector("#quantiteProduit").value;
@@ -62,5 +63,19 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
         }
         saveStorage();
         changePanierNb();
+        // message d'ajout au panier
+        messageAjout.classList.add("panierMessageAnimation");
+    })
+    // supprime la class animation a la fin de celle-ci
+    messageAjout.addEventListener("animationend", () => {
+        messageAjout.classList.remove("panierMessageAnimation");
+        console.log("animation fini")
+    })
+
+    // boutton retour stock le href afin de retourner a la meme categorie de produit 
+    document.querySelector(".produitChoisiBack").addEventListener("click",(e) => {
+        e.preventDefault;
+        let href = "ori" + produitCategorie;
+        sessionStorage.setItem("hrefProduit", JSON.stringify(href));
     })
 })

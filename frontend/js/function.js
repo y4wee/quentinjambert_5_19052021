@@ -1,15 +1,30 @@
+// animation du bouton open/close de la nav barre
+function animationSegment(segment, to) {
+    if (segment.classList.contains(`close${to}`)) {
+        segment.classList.remove(`close${to}`)
+        segment.classList.add(`open${to}`)
+    }
+    else if (segment.classList.contains(`open${to}`)) {
+        segment.classList.remove(`open${to}`)
+        segment.classList.add(`close${to}`)
+    } else {
+        segment.classList.add(`open${to}`)
+    }
+}
 // fonction pour ouvrir ou fermer la navigation
 function navControl(e) {
     e.preventDefault;
     let overlayOpac = document.querySelector(".overlayOpacity");
     let navSlide = document.querySelector(".navSlide");
-
+    let buttonSegmentUp = document.querySelector(".navSlideCloseUp");
+    let buttonSegmentDown = document.querySelector(".navSlideCloseDown");
+    // affichage fond opaque
     if (overlayOpac.classList.contains("displayOff")) {
         overlayOpac.classList.remove("displayOff");
     } else {
         overlayOpac.classList.add("displayOff");
     }
-
+    // affichage barre navigation
     if (navSlide.classList.contains("animationSlide")) {
         navSlide.classList.remove("animationSlide");
         document.querySelector(".headerLogo h1").style.transform = "translateX(0)"
@@ -17,14 +32,10 @@ function navControl(e) {
         navSlide.classList.add("animationSlide");
         document.querySelector(".headerLogo h1").style.transform = "translateX(250px)"
     }
-
-    document.querySelectorAll(".navSlideClose span").forEach(segment => {
-        if (segment.classList.contains("animation")) {
-            segment.classList.remove("animation");
-        } else {
-            segment.classList.add("animation");
-        }
-    })
+    //segment up
+    animationSegment(buttonSegmentUp, "Up");
+    //segment down
+    animationSegment(buttonSegmentDown, "Down");
 }
 // stock le panier dans le local storage
 function saveStorage() {
@@ -73,20 +84,24 @@ function prixPanier() {
 }
 
 // fonction pour les requetes vers le backend en fonction de la categorie produit, stock la reponse serveur et supprime le contenu du pannier 
-async function postRequest(categorie, categoriePost) {
-    let response = await fetch(`http://localhost:3000/api/${categorie}/order`, {
+function postRequest(categorie, categoriePost) {
+    fetch(`http://localhost:3000/api/${categorie}/order`, {
         method: "POST",
         headers: {
-        'Content-Type': 'application/json'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(categoriePost)
     })
-    if (response.ok) {
-        let data = await response.json();
+    .then(function(response) {
+        if (response.ok) {
+            console.log(response)
+            return response.json();
+        }
+    })
+    .then(function(data) {
         sessionStorage.setItem(`data${categorie}`, JSON.stringify(data));
         localStorage.removeItem("contenuPanier");
-        window.location.href = "./confirmation.html";
-    } else {
-        console.error('Retour du serveur : ', response.status);
-    }
+        window.location = "../html/confirmation.html";
+    })
 }

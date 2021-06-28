@@ -16,3 +16,16 @@ main {
         padding: 2% 0;
     }
 }
+.mainAccueilPresentation {
+    max-width: 700px;
+    color: $secondColor;
+    & h1 {
+        font-size: 1.8em;
+        & .presentationH1Color {
+            color: $color3;
+        }
+    }
+    & p {
+        font-size: 1.2em;
+    }
+}

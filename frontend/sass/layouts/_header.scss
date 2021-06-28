@@ -23,12 +23,15 @@
     // logo pannier du header
     &Panier {
         @include flexcenter;
-        background-color: $secondColor;
-        height: 70px;
-        width: 70px;
-        border-radius: 45px;
         margin-right: 5%;
         position: relative;
+        &Lien {
+            @include flexcenter;
+            background-color: $secondColor;
+            height: 70px;
+            width: 70px;
+            border-radius: 45px;
+        }
         //nombre de pdt dans le pannier
         &Number {
             @include flexcenter;

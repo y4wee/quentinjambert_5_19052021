@@ -44,6 +44,10 @@
     font-size: 1.3em;
     box-shadow: 0 0 100px $mainColor;
     overflow: hidden;
+    & h2 {
+        font-size: 1.2em;
+        color: $secondColor;
+    }
     // input du form
     & div input {
         outline: none;

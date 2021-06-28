@@ -97,3 +97,29 @@
         box-shadow: 0 2px 10px black;
     }
 }
+// message apres l'ajout d'un produit
+.panierMessage {
+    position: absolute;
+    top: 80px;
+    @include flexcenter;
+    flex-direction: column;
+    opacity: 0;
+    &Triangle {
+        height : 0;
+        width : 0;
+        border-right : 9px solid transparent;
+        border-bottom : 15px solid $color3;
+        border-left : 9px solid transparent;    
+    }
+    &Text {
+        @include flexcenter;
+        background-color: $color3;
+        color: $secondColor;
+        width: 140px;
+        height: 70px;
+        border-radius: 30px;
+    }
+    &Animation {
+        animation: messagePanier 0.8s ease-in-out;
+    }
+}
