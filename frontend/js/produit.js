@@ -69,13 +69,8 @@ fetch("http://localhost:3000/api/" + produitCategorie + "/" + produitId)
     // supprime la class animation a la fin de celle-ci
     messageAjout.addEventListener("animationend", () => {
         messageAjout.classList.remove("panierMessageAnimation");
-        console.log("animation fini")
     })
 
-    // boutton retour stock le href afin de retourner a la meme categorie de produit 
-    document.querySelector(".produitChoisiBack").addEventListener("click",(e) => {
-        e.preventDefault;
-        let href = "ori" + produitCategorie;
-        sessionStorage.setItem("hrefProduit", JSON.stringify(href));
-    })
+    // boutton retour stock le href afin de retourner a la meme categorie de produit sur la page accueil
+    document.querySelector(".produitChoisiBack").addEventListener("click", stockProduitHref);
 })

@@ -12,18 +12,16 @@ document.querySelector(".pageCommandeValidation").addEventListener("click", (e) 
     // stockage du prix
     let prixCommande = document.querySelector(".pageCommandeTotalPrix").textContent;
     sessionStorage.setItem("prixCommande", JSON.stringify(prixCommande));
-    //stockage des id produit
+    //stockage des id produit dans des tableaux correspondant a leur categorie
     for (let produitPanier of contenuPanier) {
         if (produitPanier.categorie == "teddies") {
             teddiesProducts.push(produitPanier._id);
-            console.log(teddiesProducts);
         }
         else if (produitPanier.categorie == "cameras") {
             camerasProducts.push(produitPanier._id);
-            console.log(camerasProducts);
-        } else {
-            furnitureProducts.push(produitPanier._id)
-            console.log(furnitureProducts);
+        } 
+        else {
+            furnitureProducts.push(produitPanier._id);
         }
     }
 })
@@ -31,6 +29,7 @@ document.querySelector(".pageCommandeValidation").addEventListener("click", (e) 
 document.querySelector(".formOverlayClose").addEventListener("click", (e) => {
     e.preventDefault;
     document.querySelector(".formOverlay").classList.add("displayOff");
+    // vide les arrays a la fermeture du formulaire pour eviter les clonage de pdts 
     teddiesProducts = [];
     camerasProducts = [];
     furnitureProducts = [];
@@ -39,13 +38,12 @@ document.querySelector(".formOverlayClose").addEventListener("click", (e) => {
 // stock les données input du formulaire dans l'objet contact
 let contact = {};
 document.querySelectorAll(".commandeForm div input").forEach(input => {
-    input.addEventListener("change", (e) => {
+    input.addEventListener("change", () => {
         Object.defineProperty(contact, `${input.id}`, {
             value: input.value,
             configurable: true,
             enumerable: true
         })
-        console.log(contact);
     })
 })
 
@@ -65,9 +63,6 @@ document.querySelector(".commandeForm").addEventListener("submit", (e) => {
         contact,
         products: furnitureProducts
     };
-    console.log(teddiesPost);
-    console.log(camerasPost);
-    console.log(furniturePost);
     // si des produits teddy sont present alors envoie une requete Post vers teddies/order
     if (teddiesPost.products.length > 0) {
         postRequest("teddies", teddiesPost);

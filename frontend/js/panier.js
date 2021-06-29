@@ -9,7 +9,7 @@ panierState();
 // construction page panier
 let addedPdts = [];
 for (let produitPanier of contenuPanier) {
-    // permet d'eviter les doublons de produit dans le panier
+    // permet d'eviter les doublons de carte produit dans le panier
     if (addedPdts.indexOf(produitPanier.name) === -1) {
         addedPdts.push(produitPanier.name);
         document.querySelector(".pageCommandePanier").innerHTML += `<div class="pageCommandePanierProduit" id="panier${produitPanier._id}">
@@ -38,22 +38,14 @@ for (let produitPanier of contenuPanier) {
 prixPanier();
 
 // boutons pour gerer les quantités
-//enlever une quantité
+//enlever une quantité si supperieur a 1
 document.querySelectorAll(".quantiteRemove").forEach(removing => {
     removing.addEventListener("click", (e) => {
         e.preventDefault;
         if (removing.nextElementSibling.textContent > 1) {
-            e.preventDefault;
-            let pdtQuantite = removing.nextElementSibling;
-            let pdtId = removing.parentNode.parentNode.id.replace("panier", "");
-            let produitRemove = contenuPanier.find(element => element._id == pdtId);
-            let pdtIndex = contenuPanier.indexOf(produitRemove);
-
-            pdtQuantite.textContent--;
-            contenuPanier.splice(pdtIndex, 1);
+            quantiteRemove(removing);
             changePanierNb();
             saveStorage();
-            document.querySelector(`.detailPrix.pdt${pdtId}`).textContent = produitRemove.price/100 * pdtQuantite.textContent + " €";
             prixPanier();
         }
     })
@@ -62,15 +54,9 @@ document.querySelectorAll(".quantiteRemove").forEach(removing => {
 document.querySelectorAll(".quantiteAdd").forEach(adding => {
     adding.addEventListener("click", (e) => {
         e.preventDefault;
-        let pdtQuantite = adding.previousElementSibling;
-        let pdtId = adding.parentNode.parentNode.id.replace("panier", "");
-        let produitAdd = contenuPanier.find(element => element._id == pdtId)
-
-        pdtQuantite.textContent++;
-        contenuPanier.splice(1, 0, produitAdd);
+        quantiteAdd(adding);
         changePanierNb();
         saveStorage();
-        document.querySelector(`.detailPrix.pdt${pdtId}`).textContent = produitAdd.price/100 * pdtQuantite.textContent + " €";
         prixPanier();
     })
 })

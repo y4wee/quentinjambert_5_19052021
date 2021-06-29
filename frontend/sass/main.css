@@ -726,6 +726,10 @@ main {
   border-radius: 30px;
 }
 
+.pageCommandePanier h1 {
+  color: #261624;
+}
+
 .pageCommandePanierProduit {
   position: relative;
   -webkit-box-align: center;
