@@ -57,3 +57,26 @@
         opacity: 0;
     }
 }
+// apparition cartes produit accueil
+@keyframes carteAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// apparition carte page produit
+@keyframes backButtonAppear {
+    from {
+        transform: translateX(130px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

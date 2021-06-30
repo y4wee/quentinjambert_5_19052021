@@ -10,6 +10,7 @@
     background-color: $secondColor;
     user-select: none;
     transition: all 0.3s ease-out;
+    z-index: 2;
     //animation slide
     &.animationSlide {
         box-shadow: -10px 0 35px $mainColor;
@@ -91,4 +92,5 @@
     background-color: rgba(0,0,0,0.8);
     opacity: 0;
     animation: opacityKey 0.3s ease-out forwards;
+    z-index: 1;
 }

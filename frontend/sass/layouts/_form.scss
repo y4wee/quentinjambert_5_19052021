@@ -8,6 +8,7 @@
     height: 100%;
     z-index: 2;
     background-color: rgba(0,0,0,0.8);
+    animation: opacityKey 0.35s ease-out 0.1s backwards;
     //bouton pour fermer l'overlay form
     &Close {
         @include flexcenter;
@@ -42,8 +43,9 @@
     background-color: lighten($mainColor, 2%);
     border-radius: 30px;
     font-size: 1.3em;
-    box-shadow: 0 0 100px $mainColor;
+    
     overflow: hidden;
+    animation: opacityKey 0.35s ease 0.1s backwards;
     & h2 {
         font-size: 1.2em;
         color: $secondColor;

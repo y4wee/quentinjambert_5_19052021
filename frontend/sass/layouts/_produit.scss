@@ -8,6 +8,8 @@
     height: 500px;
     border-radius: 30px;
     font-size: 1.2em;
+    animation: carteAppear 0.3s ease-out 0.1s backwards;
+    transform-origin: left;
     // back arrow
     &Back {
         @include flexcenter;
@@ -18,6 +20,7 @@
         height: 70px;
         border-radius: 50%;
         text-decoration: none;
+        animation: backButtonAppear 0.3s ease-out 0.45s backwards;
         & .fas {
             color: $mainColor;
             font-size: 1.7em;

@@ -189,6 +189,58 @@ body {
   }
 }
 
+@-webkit-keyframes carteAppear {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes carteAppear {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes backButtonAppear {
+  from {
+    -webkit-transform: translateX(130px);
+            transform: translateX(130px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes backButtonAppear {
+  from {
+    -webkit-transform: translateX(130px);
+            transform: translateX(130px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .contenuArticleCarte {
   margin: 2% 6%;
   border-radius: 30px;
@@ -198,6 +250,8 @@ body {
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  -webkit-animation: carteAppear 0.3s ease-out 0.2s backwards;
+          animation: carteAppear 0.3s ease-out 0.2s backwards;
 }
 
 .contenuArticleCarteImage {
@@ -266,6 +320,7 @@ body {
           user-select: none;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  z-index: 2;
 }
 
 .navSlide.animationSlide {
@@ -367,6 +422,7 @@ body {
   opacity: 0;
   -webkit-animation: opacityKey 0.3s ease-out forwards;
           animation: opacityKey 0.3s ease-out forwards;
+  z-index: 1;
 }
 
 .header {
@@ -552,6 +608,10 @@ main {
   height: 500px;
   border-radius: 30px;
   font-size: 1.2em;
+  -webkit-animation: carteAppear 0.3s ease-out 0.1s backwards;
+          animation: carteAppear 0.3s ease-out 0.1s backwards;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .produitChoisiBack {
@@ -568,6 +628,8 @@ main {
   height: 70px;
   border-radius: 50%;
   text-decoration: none;
+  -webkit-animation: backButtonAppear 0.3s ease-out 0.45s backwards;
+          animation: backButtonAppear 0.3s ease-out 0.45s backwards;
 }
 
 .produitChoisiBack .fas {
@@ -728,6 +790,7 @@ main {
 
 .pageCommandePanier h1 {
   color: #261624;
+  font-size: 1.5em;
 }
 
 .pageCommandePanierProduit {
@@ -903,6 +966,8 @@ main {
   height: 100%;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation: opacityKey 0.35s ease-out 0.1s backwards;
+          animation: opacityKey 0.35s ease-out 0.1s backwards;
 }
 
 .formOverlayClose {
@@ -948,9 +1013,9 @@ main {
   background-color: #f7f0f5;
   border-radius: 30px;
   font-size: 1.3em;
-  -webkit-box-shadow: 0 0 100px #F3E9F1;
-          box-shadow: 0 0 100px #F3E9F1;
   overflow: hidden;
+  -webkit-animation: opacityKey 0.35s ease 0.1s backwards;
+          animation: opacityKey 0.35s ease 0.1s backwards;
 }
 
 .commandeForm h2 {

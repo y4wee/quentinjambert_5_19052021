@@ -53,20 +53,16 @@ function stockProduitHref(e) {
 }
 
 
-// changement de la page panier si vide
-function panierVide() {
-    document.querySelector(".pageCommandeTotal").classList.add("displayOff");
-    document.querySelector(".pageCommandeValidation").classList.add("displayOff");
-    document.querySelector(".pageCommandeVide").classList.remove("displayOff");
-}
-// jonction entre les deux fonctions
+// gere l'affichage de la page panier si celui-ci est vide ou non
 function panierState() {
     changePanierNb();
     if (contenuPanier.length == 0) {
-        panierVide();
+        document.querySelector(".pageCommandeTotal").classList.add("displayOff");
+        document.querySelector(".pageCommandeValidation").classList.add("displayOff");
+        document.querySelector(".pageCommandeVide").classList.remove("displayOff");
     }
 }
-// ajout d'une quantité d'un produit sur la page panier
+// ajout d'une quantité d'un produit sur la page panier et modifie le prix en fonction du nombre de pdt
 function quantiteAdd(adding) {
     let pdtQuantite = adding.previousElementSibling;
     let pdtId = adding.parentElement.parentElement.id.replace("panier", "");
@@ -76,7 +72,7 @@ function quantiteAdd(adding) {
     contenuPanier.splice(1, 0, produitAdd);
     document.querySelector(`.detailPrix.pdt${pdtId}`).textContent = produitAdd.price/100 * pdtQuantite.textContent + " €";
 }
-// suppression d'une quantité d'un produit sur la page panier
+// suppression d'une quantité d'un produit sur la page panier et modifie le prix en fonction du nombre de pdt
 function quantiteRemove(removing) {
     let pdtQuantite = removing.nextElementSibling;
     let pdtId = removing.parentElement.parentElement.id.replace("panier", "");
@@ -121,7 +117,6 @@ function postRequest(categorie, categoriePost) {
     })
     .then(function(response) {
         if (response.ok) {
-            console.log(response)
             return response.json();
         }
     })

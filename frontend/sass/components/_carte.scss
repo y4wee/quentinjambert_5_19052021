@@ -6,6 +6,7 @@
     text-decoration: none;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
+    animation: carteAppear 0.3s ease-out 0.2s backwards;
     &Image {
         @extend %flex;
         align-items: flex-end;
