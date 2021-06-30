@@ -48,7 +48,7 @@ document.querySelectorAll(".commandeForm div input").forEach(input => {
 })
 
 // envoi des données vers le backend par l'evenement submit
-document.querySelector(".commandeForm").addEventListener("submit", (e) => {
+document.querySelector(".commandeFormSubmit").addEventListener("click", (e) => {
     e.preventDefault;
     //formatage des données envoyées en fonction de la catégorie de produit
     let teddiesPost = {
