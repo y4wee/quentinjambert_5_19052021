@@ -88,3 +88,30 @@
         }
     }
 }
+
+@media all and (max-width: 700px) {
+    .commandeForm {
+        width: auto;
+        min-width: 360px;
+        font-size: 1.1em;
+        padding: 30px 0;
+        // input du form
+        & div input {
+            outline: none;
+            border: none;
+            background: transparent;
+            font-size: 0.9em;
+            margin-left: 10px;
+            width: calc(100% - 100px);
+        }
+        // affichage de chaque champs text du form
+        & div {
+            display: flex;
+            align-items: flex-end;
+            width: calc(100% - 50px);
+            height: 40px;
+            border-bottom: solid 2px $secondColor;
+            margin-top: 40px;
+        }
+    }
+}

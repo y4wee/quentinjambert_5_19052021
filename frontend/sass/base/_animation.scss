@@ -80,3 +80,14 @@
         opacity: 1;
     }
 }
+
+@keyframes backButtonAppearMobile {
+    from {
+        transform: translateY(-130px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

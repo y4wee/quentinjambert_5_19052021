@@ -27,10 +27,8 @@ function navControl(e) {
     // affichage barre navigation
     if (navSlide.classList.contains("animationSlide")) {
         navSlide.classList.remove("animationSlide");
-        document.querySelector(".headerLogo h1").style.transform = "translateX(0)"
     } else {
         navSlide.classList.add("animationSlide");
-        document.querySelector(".headerLogo h1").style.transform = "translateX(250px)"
     }
     //segment up
     animationSegment(buttonSegmentUp, "Up");
@@ -57,6 +55,7 @@ function stockProduitHref(e) {
 function panierState() {
     changePanierNb();
     if (contenuPanier.length == 0) {
+        document.querySelector(".pageCommandePanier").classList.add("displayOff");
         document.querySelector(".pageCommandeTotal").classList.add("displayOff");
         document.querySelector(".pageCommandeValidation").classList.add("displayOff");
         document.querySelector(".pageCommandeVide").classList.remove("displayOff");

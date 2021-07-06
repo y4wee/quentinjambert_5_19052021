@@ -11,9 +11,8 @@
         margin-left: 3%;
     }
     & h1 {
-        color: $secondColor;
+        color: $color3;
         margin-left: 20px;
-        transition: all 0.3s ease-out;
         user-select: none;
         margin: 0;
     }
@@ -49,5 +48,21 @@
     & .fas {
         font-size: 1.8em;
         color: $mainColor;
+    }
+}
+
+@media all and (max-width: 740px) {
+    .header {
+        flex-direction: column;
+        min-width: 360px;
+        &Logo {
+            margin-left: 0;
+        }
+        &Panier {
+            margin-right: 0;
+        }
+        & h1 {
+            font-size: 7em;
+        }
     }
 }

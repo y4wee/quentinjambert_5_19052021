@@ -20,6 +20,7 @@
             height: 100px;
             width: 75%;
             min-width: 500px;
+            max-width: 800px;
             margin: 10px auto;
             background-color: $mainColor;
             border-radius: 30px;
@@ -98,7 +99,6 @@
     @extend %flex;
     margin: 30px auto;
     padding: 15px 50px;
-    width: 100%;
     border-top: solid 3px $secondColor;
     font-size: 1.3em;
     &Prix {
@@ -143,5 +143,35 @@
     & .far {
         font-size: 7em;
         color: $secondColor;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .pageCommandePanierProduit {
+        height: 80px;
+        min-width: 360px;
+        &Image {
+            height: 80px;
+            width: calc(100% - 40px);
+        }
+        &Detail {
+            width: calc(100% - 40px);
+            & .detailNom {
+                margin-left: 15px;
+            }
+            & .detailPrix {
+                margin-right: 15px;
+            }
+        }
+        &Remove {
+            width: 40px;
+        }
+    }
+    .pageCommandeTotal {
+        flex-direction: column;
+        align-items: center;
+        &Prix {
+            margin: 0;
+        }
     }
 }

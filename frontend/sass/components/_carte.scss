@@ -27,7 +27,6 @@
         border-bottom-right-radius: 30px;
         position: relative;
         left: 0;
-        transform: translateY(100%);
         transition: transform 0.25s ease-in-out;
         & h2 {
             margin: 0;
@@ -41,6 +40,13 @@
         
         .contenuArticleCarteName {
             transform: translateY(0);
+        }
+    }
+}
+@media all and (min-width: 1025px) {
+    .contenuArticleCarte {
+        &Name {
+            transform: translateY(100%);
         }
     }
 }

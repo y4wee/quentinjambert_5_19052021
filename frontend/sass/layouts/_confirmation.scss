@@ -73,3 +73,26 @@
         background-color: $color3;
     }
 }
+
+@media all and (max-width: 700px) {
+    .confirmationMessage {
+        & span {
+            font-size: 4em;
+        }
+    }
+    .headerConfirmation {
+        flex-direction: column;
+        align-items: center;
+        min-width: 360px;
+        & h1 {
+            font-size: 5em;
+            margin: 10px auto;
+        }
+    }
+    .mainConfirmation {
+        min-width: 360px;
+        margin: 50px auto;
+        padding: 0 10px;
+        margin-bottom: 150px;
+    }
+}

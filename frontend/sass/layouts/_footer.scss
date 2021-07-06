@@ -34,3 +34,9 @@
         margin: 0 2%;
     }
 }
+
+@media all and (max-width: 500px) {
+    .footer {
+        min-width: 360px;
+    }
+}
